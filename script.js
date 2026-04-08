@@ -15,6 +15,8 @@ revealEls.forEach((el) => observer.observe(el));
 
 const eventForm = document.getElementById('event-form');
 const eventList = document.getElementById('event-list');
+const nextUp = document.getElementById('next-up');
+const blogPostsContainer = document.getElementById('blog-posts');
 
 const eventSeed = [
   { date: '2026-05-16', location: 'East Austin Warehouse • Austin, TX' },
@@ -31,13 +33,19 @@ const formatDate = (value) =>
 
 const renderEvents = (events) => {
   eventList.innerHTML = '';
-  events
-    .sort((a, b) => new Date(a.date) - new Date(b.date))
-    .forEach((event) => {
+  const sorted = [...events].sort((a, b) => new Date(a.date) - new Date(b.date));
+  sorted.forEach((event) => {
       const li = document.createElement('li');
       li.textContent = `${formatDate(event.date)} — ${event.location}`;
       eventList.appendChild(li);
     });
+
+  const upcoming = sorted.find((event) => new Date(event.date) >= new Date());
+  if (upcoming) {
+    nextUp.textContent = `Next up: ${formatDate(upcoming.date)} at ${upcoming.location}`;
+  } else if (sorted[0]) {
+    nextUp.textContent = `Recent event: ${formatDate(sorted[0].date)} at ${sorted[0].location}`;
+  }
 };
 
 renderEvents(eventSeed);
@@ -65,6 +73,40 @@ const fakeSubmit = (formId, statusId, message) => {
 
 fakeSubmit('vendor-form', 'vendor-status', 'Vendor application received. We will reach out soon.');
 fakeSubmit('contact-form', 'contact-status', 'Message sent. Thank you for connecting with 7tac.');
+
+const blogPosts = [
+  {
+    title: 'Why Nightmarket ATX is Becoming Austin’s Third Place',
+    body: 'We are building a recurring place to gather beyond work and home—where artists, dancers, and neighbors can pull up consistently and feel ownership.',
+    cta: 'Join the next date'
+  },
+  {
+    title: 'The Sound We Protect: Triphop, House, DnB, Underground',
+    body: 'Our nights are curated for discovery and depth, from left-field triphop textures to deep house and dnb pressure. Come hear what algorithms miss.',
+    cta: 'Hear it live'
+  },
+  {
+    title: 'Physical Media is Back: Zines, Tapes, and Vinyl in the Market',
+    body: 'Nightmarket ATX gives space to vendors carrying physical culture: rare records, DIY print, and tactile artifacts that keep scenes rooted in reality.',
+    cta: 'Apply as a vendor'
+  }
+];
+
+const renderBlogPosts = () => {
+  blogPostsContainer.innerHTML = '';
+  blogPosts.forEach((post) => {
+    const article = document.createElement('article');
+    article.className = 'card';
+    article.innerHTML = `
+      <h3>${post.title}</h3>
+      <p>${post.body}</p>
+      <a class="btn ghost" href="#nightmarket">${post.cta}</a>
+    `;
+    blogPostsContainer.appendChild(article);
+  });
+};
+
+renderBlogPosts();
 
 const canvas = document.getElementById('graffiti-canvas');
 const ctx = canvas.getContext('2d');

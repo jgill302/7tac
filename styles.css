@@ -205,6 +205,20 @@ textarea {
   padding: 0.65rem;
 }
 
+.next-up {
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  padding: 0.7rem;
+  border-radius: 8px;
+  background: rgba(181, 109, 255, 0.18);
+  border: 1px solid rgba(207, 153, 255, 0.35);
+  font-weight: 600;
+}
+
+.blog-cta {
+  margin-bottom: 1rem;
+}
+
 .graffiti-wrap {
   display: grid;
   gap: 0.7rem;
