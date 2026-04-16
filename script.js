@@ -116,147 +116,31 @@ const clearBtn = document.getElementById('clear-canvas');
 const downloadBtn = document.getElementById('download-canvas');
 
 const drawTrainBase = () => {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  const bg = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  bg.addColorStop(0, '#f1f3f7');
-  bg.addColorStop(1, '#d8dde7');
-  ctx.fillStyle = bg;
+  ctx.fillStyle = '#c8cfdb';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = 'rgba(40, 46, 62, 0.2)';
-  ctx.beginPath();
-  ctx.ellipse(480, 350, 340, 42, -0.08, 0, Math.PI * 2);
-  ctx.fill();
+  ctx.fillStyle = '#7a8190';
+  ctx.fillRect(0, canvas.height - 80, canvas.width, 80);
 
-  const track = (x, y, w, h) => {
-    ctx.fillStyle = '#7f8898';
-    ctx.fillRect(x, y, w, h);
-    ctx.fillStyle = '#606879';
-    ctx.fillRect(x + 12, y + 10, w - 24, h - 20);
-    ctx.fillStyle = '#4f5665';
-    ctx.fillRect(x + 26, y + h - 16, w - 52, 8);
-  };
-
-  track(245, 286, 170, 56);
-  track(655, 260, 165, 54);
-
-  const leftFace = [
-    [76, 116],
-    [176, 84],
-    [223, 132],
-    [129, 168]
-  ];
-
-  const roof = [
-    [176, 84],
-    [806, 54],
-    [906, 110],
-    [223, 132]
-  ];
-
-  const side = [
-    [223, 132],
-    [906, 110],
-    [886, 242],
-    [204, 282]
-  ];
-
-  ctx.fillStyle = '#d5dae3';
-  ctx.beginPath();
-  leftFace.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.closePath();
-  ctx.fill();
-
-  const roofGrad = ctx.createLinearGradient(160, 90, 820, 130);
-  roofGrad.addColorStop(0, '#eef1f6');
-  roofGrad.addColorStop(1, '#cfd6e0');
-  ctx.fillStyle = roofGrad;
-  ctx.beginPath();
-  roof.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.closePath();
-  ctx.fill();
-
-  const sideGrad = ctx.createLinearGradient(220, 130, 890, 250);
-  sideGrad.addColorStop(0, '#e5e9f0');
-  sideGrad.addColorStop(0.5, '#d6dce6');
-  sideGrad.addColorStop(1, '#c2c9d4');
-  ctx.fillStyle = sideGrad;
-  ctx.beginPath();
-  side.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.closePath();
-  ctx.fill();
-
-  ctx.strokeStyle = '#b5bdc9';
-  ctx.lineWidth = 2;
-  for (let i = 0; i < 15; i += 1) {
-    const y = 90 + i * 2.8;
-    ctx.beginPath();
-    ctx.moveTo(190 + i * 1.5, y);
-    ctx.lineTo(875 + i * 1.1, y + 20);
-    ctx.stroke();
-  }
-
-  ctx.strokeStyle = '#a8afba';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(215, 212);
-  ctx.lineTo(892, 188);
-  ctx.stroke();
-
-  const drawDoor = (x, y, w, h, skew = -20) => {
-    ctx.fillStyle = '#cdd4de';
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + w, y + skew * 0.02);
-    ctx.lineTo(x + w - 8, y + h);
-    ctx.lineTo(x - 8, y + h - 2);
-    ctx.closePath();
-    ctx.fill();
-    ctx.strokeStyle = '#a4acb8';
-    ctx.stroke();
-  };
-
-  drawDoor(670, 136, 46, 112);
-  drawDoor(720, 134, 46, 112);
-
-  const win = (x, y, w, h) => {
-    const wg = ctx.createLinearGradient(x, y, x, y + h);
-    wg.addColorStop(0, '#7f8a9c');
-    wg.addColorStop(1, '#3d4554');
-    ctx.fillStyle = wg;
-    ctx.beginPath();
-    ctx.roundRect(x, y, w, h, 8);
-    ctx.fill();
-  };
-
-  win(683, 149, 16, 62);
-  win(733, 146, 16, 62);
-  win(136, 121, 34, 42);
-  win(185, 136, 29, 33);
-  win(86, 124, 30, 36);
+  ctx.fillStyle = '#515866';
+  ctx.fillRect(40, 70, canvas.width - 80, 250);
 
   ctx.fillStyle = '#b56dff';
-  ctx.beginPath();
-  ctx.arc(316, 200, 25, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = '#ffffff';
-  ctx.font = 'bold 26px Audiowide, sans-serif';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText('7', 316, 201);
+  ctx.fillRect(40, 70, canvas.width - 80, 26);
 
-  ctx.strokeStyle = '#9da5b1';
-  ctx.lineWidth = 3;
+  ctx.fillStyle = '#1f2432';
+  for (let i = 0; i < 5; i += 1) {
+    ctx.fillRect(95 + i * 170, 120, 120, 95);
+  }
+
+  ctx.fillStyle = '#282e3e';
+  ctx.fillRect(canvas.width / 2 - 45, 110, 90, 180);
+
+  ctx.fillStyle = '#111';
   ctx.beginPath();
-  leftFace.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-  ctx.lineTo(204, 282);
-  ctx.lineTo(886, 242);
-  ctx.lineTo(906, 110);
-  ctx.lineTo(806, 54);
-  ctx.lineTo(176, 84);
-  ctx.closePath();
-  ctx.stroke();
+  ctx.arc(170, canvas.height - 25, 32, 0, Math.PI * 2);
+  ctx.arc(canvas.width - 170, canvas.height - 25, 32, 0, Math.PI * 2);
+  ctx.fill();
 };
 
 drawTrainBase();
