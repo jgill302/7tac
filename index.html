@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>7tac | Based in the Essence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-gif bg-gif-1" aria-hidden="true"></div>
+    <div class="bg-gif bg-gif-2" aria-hidden="true"></div>
+
+    <header class="hero" id="top">
+      <nav class="nav container">
+        <div class="brand">7tac</div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#nightmarket">Nightmarket ATX</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#graffiti">Graffiti Train</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <section class="hero-content container">
+        <p class="kicker">7 train art co • based in the essence</p>
+        <h1>NYC house + techno arts energy, now lighting up Austin nights.</h1>
+        <p>
+          7tac is a born-and-bred electronic arts collective merging underground sound,
+          visual experimentation, and culture-forward community spaces.
+        </p>
+        <a class="btn" href="#nightmarket">Enter Nightmarket ATX</a>
+      </section>
+    </header>
+
+    <main>
+      <section class="panel container reveal" id="about">
+        <h2>About Us</h2>
+        <p>
+          We are <strong>7 train art co</strong> (7tac): a NYC-rooted house and techno
+          collective building immersive experiences in Austin, Texas. Every project is
+          guided by one mantra: <em>based in the essence</em>.
+        </p>
+        <p>
+          From sonic journeys to visual installations and collaborative popups, we protect
+          authentic culture while creating room for emerging creatives.
+        </p>
+      </section>
+
+      <section class="panel container reveal" id="nightmarket">
+        <h2>Nightmarket ATX</h2>
+        <p class="subtitle">
+          A night market with NYC flavor: real cultural drive, no culture-vulture cosplay.
+        </p>
+        <div class="grid two-col">
+          <article class="card">
+            <h3>Apply to be a Vendor</h3>
+            <form id="vendor-form" class="stack-form">
+              <label>
+                Brand / Artist Name
+                <input type="text" name="vendorName" required />
+              </label>
+              <label>
+                Category
+                <input type="text" name="category" placeholder="Fashion, Art, Food, etc." required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Why Nightmarket ATX?
+                <textarea name="pitch" rows="4" required></textarea>
+              </label>
+              <button type="submit" class="btn">Submit Vendor Application</button>
+              <p class="form-status" id="vendor-status" aria-live="polite"></p>
+            </form>
+          </article>
+
+          <article class="card">
+            <h3>Next Events Calendar</h3>
+            <p>Admins can add upcoming Nightmarket ATX dates and locations below.</p>
+            <form id="event-form" class="stack-form compact">
+              <label>
+                Event Date
+                <input type="date" id="event-date" required />
+              </label>
+              <label>
+                Location
+                <input type="text" id="event-location" placeholder="Venue + City" required />
+              </label>
+              <button type="submit" class="btn ghost">Add Event</button>
+            </form>
+            <p class="next-up" id="next-up" aria-live="polite"></p>
+            <ul id="event-list" class="event-list"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel container reveal" id="blog">
+        <h2>7tac Blog</h2>
+        <p class="subtitle">
+          Stories from the scene that pull you from scrolling into the next Nightmarket ATX date.
+        </p>
+        <div class="blog-cta card">
+          <h3>Build your 3rd place with us</h3>
+          <p>
+            Nightmarket ATX is designed as a real third place in Austin—where underground sound
+            (triphop, house, dnb), physical media, and community presence matter more than clout.
+          </p>
+          <a class="btn" href="#nightmarket">See Next Nightmarket Dates</a>
+        </div>
+        <div class="grid three-col" id="blog-posts"></div>
+      </section>
+
+      <section class="panel container reveal" id="community-impact">
+        <h2>Community Impact</h2>
+        <div class="grid three-col">
+          <article class="card">
+            <h3>Culture-First Popups</h3>
+            <p>
+              We host events in Austin that carry true NYC texture: local artists,
+              DJs, and makers centered before algorithms.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Creative Opportunity</h3>
+            <p>
+              Nightmarket ATX opens access for independent vendors and performers to grow
+              with community support, not trend-chasing.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Safe, Electric Spaces</h3>
+            <p>
+              We design high-vibe nights where culture is lived, not staged—based in the
+              essence from soundcheck to sunrise.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel container reveal" id="graffiti">
+        <h2>Graffiti the 7 Train</h2>
+        <p>Draw directly on the train side, then download your tagged creation with a 7tac watermark.</p>
+        <div class="graffiti-wrap">
+          <canvas id="graffiti-canvas" width="980" height="420" aria-label="Graffiti drawing canvas"></canvas>
+          <div class="tools">
+            <label>
+              Color
+              <input type="color" id="paint-color" value="#bb86fc" />
+            </label>
+            <label>
+              Brush
+              <input type="range" id="brush-size" min="2" max="20" value="6" />
+            </label>
+            <button id="clear-canvas" class="btn ghost" type="button">Clear</button>
+            <button id="download-canvas" class="btn" type="button">Download Artwork</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel container reveal" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+          <details>
+            <summary>What is 7tac?</summary>
+            <p>
+              7tac (7 train art co) is a NYC-born collective mixing house/techno music,
+              visual art, and community programming.
+            </p>
+          </details>
+          <details>
+            <summary>What is Nightmarket ATX?</summary>
+            <p>
+              A nighttime market + culture event in Austin, Texas built to spotlight authentic
+              creatives and keep scenes rooted in real community.
+            </p>
+          </details>
+          <details>
+            <summary>How can I collaborate with 7tac?</summary>
+            <p>
+              Use the vendor application for market participation and the contact form for
+              partnerships, performances, and installations.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="panel container reveal" id="contact">
+      <h2>Contact Us</h2>
+      <p>Let’s build together. 7tac is always based in the essence.</p>
+      <form id="contact-form" class="stack-form">
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="5" required></textarea>
+        </label>
+        <button class="btn" type="submit">Send Message</button>
+        <p class="form-status" id="contact-status" aria-live="polite"></p>
+      </form>
+      <p class="copyright">© 2026 7tac / 7 train art co — based in the essence.</p>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
