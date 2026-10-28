@@ -39,3 +39,11 @@ Home | Nightmarket ATX | Shop | Artists / Community | Journal | About / Contact.
 4. Navigation works even if animation fails or reduced motion is enabled.
 5. Shop and vendor flow are discoverable from Instagram traffic within one tap.
 6. All visuals and graffiti assets are original or properly licensed.
+
+
+## PS1-era digital collectible direction (confirmed Oct 2026)
+- Go beyond pigeons. Develop an original companion/collectible universe with multiple archetypes: pigeon, fitted cap, CD, and future playful digital creatures and street objects.
+- Inspired by the feeling of late-1990s PlayStation 1 interfaces, multi-disc jewel cases (3–4 disc editions), low-poly models, pixel sprites, holographic CD surfaces, and virtual-pet progression. Avoid reproducing copyrighted Digimon/PlayStation characters, trademarks, cover art, or proprietary UI.
+- Use layered jewel-case tabs, disc indexing, translucent acrylic, printed liner notes, and rotating 8-bit/low-poly collectible displays sparingly inside the otherwise minimalist gray website.
+- Companion types are not limited to one pigeon mascot; allow distinct collectible families and cosmetic evolution from verified attendance.
+- A first interactive UI prototype is implemented in the main landing page's Collectibles section on this design branch. It does not issue numbered items or require an email yet.
