@@ -346,3 +346,47 @@ input,textarea{background:#f0f1ef;color:#242629;border-color:#aeb2b5}
 }
 @media(max-width:390px){.brand{font-size:.9rem}.seven-roundel{width:36px;height:36px}.jewel-tab{font-size:.58rem;padding:9px 5px}}
 @media(prefers-reduced-motion:reduce){.nav-train{animation:none;display:none}.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+
+/* 7TAC / AIRY Y2K V2: translucent porcelain, lilac, compact controls.
+   Deliberately distinct from official transit branding. */
+:root{--bg:#fbfbff;--panel:rgba(255,255,255,.76);--text:#333346;--muted:#73748a;--purple:#c7a6ec;--purple-neon:#dbc8f6;--seven-gray:#dfe2ea}
+html,body{background:linear-gradient(145deg,#fff 0%,#f8f7ff 44%,#f1f7ff 100%);color:var(--text);font-family:"Space Grotesk",system-ui,sans-serif}
+body{background-attachment:fixed}
+.bg-gif{opacity:.025;mix-blend-mode:normal;filter:grayscale(1)}
+.hero{border-bottom:1px solid #ebebf3;min-height:72svh}
+.nav{min-height:62px;padding:.55rem 0}
+.nav::before{background:rgba(255,255,255,.78);border-bottom:1px solid #f1edf8}
+.brand{font-family:"Chakra Petch",sans-serif;font-size:1rem;letter-spacing:.035em;font-weight:700;color:#535068}
+.seven-roundel{width:32px;height:32px;border-radius:10px;background:#e8dbf8;color:#7b5d9b;border:1px solid #d8c3f0;font-size:1.18rem;font-family:"Chakra Petch",sans-serif;box-shadow:inset 0 1px #fff}
+.nav a{font-family:"Chakra Petch",sans-serif;font-size:.73rem;font-weight:600;letter-spacing:.02em;color:#56566d}
+.nav a[href="#nightmarket"]{color:#8f70b1}
+.nav ul{gap:.8rem}
+.nav-train{top:17px;height:27px;width:140px;background:linear-gradient(#fafbff,#dce3ef);border:1px solid #d7dbe6;color:#7d8494;opacity:.24;box-shadow:0 2px 10px #c7b8df33}
+.nav-train b{color:#9f82c5}
+.reading-progress{height:2px;background:#cdb3ec}
+.hero-content{padding:9vh 0 9vh;gap:.75rem}
+.kicker,.tag{color:#9b88b5;font-family:"Chakra Petch",sans-serif;font-size:.67rem;letter-spacing:.14em}
+h1,h2,h3{font-family:"Chakra Petch",sans-serif;letter-spacing:-.035em;font-weight:600}
+h1{font-size:clamp(2.1rem,5vw,4.6rem);line-height:1.12;max-width:19ch;font-weight:600}
+h2{font-size:clamp(1.15rem,2.1vw,1.7rem)}
+h3{font-size:1rem}
+p,.subtitle{color:#666779}
+.panel{margin:2rem auto;padding:1.1rem 1.25rem;background:rgba(255,255,255,.64);border:1px solid #e7e7f0;border-radius:12px;box-shadow:0 8px 30px #a6a0be0b}
+.card,.faq-list details{background:rgba(255,255,255,.75);border:1px solid #ebebf4;border-radius:9px;padding:.85rem}
+.btn,.menu-toggle,button{font-family:"Chakra Petch",sans-serif;font-size:.72rem;letter-spacing:.025em}
+.btn{padding:.45rem .75rem;min-height:36px;max-width:max-content;border:1px solid #ded4ed;border-radius:5px;background:#f7f2fd;color:#6e5987;font-weight:600;box-shadow:none}
+.btn:hover,.btn:focus-visible{background:#e9def8;color:#513a70}
+.btn.ghost{border-color:#e7e5ef;background:#fff;color:#68677c}
+.stack-form{gap:.5rem}
+label{font-size:.77rem;color:#6e6e83}
+input,textarea,select{background:#fff;color:#3c3c50;border:1px solid #e3e3ee;border-radius:5px;padding:.5rem;font-size:.83rem}
+input:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid #ac86d6;outline-offset:3px}
+.event-list li,.next-up{background:#f8f5fc;border-color:#e2d8ef;color:#626176}
+#graffiti-canvas{border-color:#e4e5ee}
+.faq-list details{margin-bottom:.4rem}
+.jewel-tab{background:#faf8ff;color:#76638c;border-color:#e6dcf0}
+.jewel-tab.is-active{background:#e8dafa;color:#65487f;border-color:#d8c3ed}
+.form-status{color:#69677a}
+@media(max-width:800px){.nav{min-height:58px}.menu-toggle{padding:8px 10px;background:#faf8ff;border:1px solid #e3daee;color:#665678;font-size:.69rem}.nav ul{background:rgba(255,255,255,.98);border:1px solid #eee8f5}.nav ul a{padding:10px 12px}.nav-train{top:15px}.hero-content{padding-top:7vh}.panel{padding:1rem}}
+@media(max-width:390px){.brand{font-size:.77rem}.seven-roundel{width:30px;height:30px}.nav{gap:4px}.btn{font-size:.69rem}}
