@@ -279,3 +279,29 @@ textarea {
     justify-content: center;
   }
 }
+
+/* 7TAC collectible archive: original PS1-era jewel-case and low-poly references */
+.collectible-section{background:#d8d9d7;color:#242528;border:1px solid #b8babd;box-shadow:none}
+.collectible-section .subtitle{color:#555960;max-width:65ch}
+.jewel-shell{border:1px solid #96999d;background:linear-gradient(145deg,#f1f2f0,#c2c5c7);box-shadow:10px 13px 0 #aeb0b2,0 15px 36px #30323820;padding:12px}
+.jewel-tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid #7e8389;padding-bottom:10px}
+.jewel-tab{cursor:pointer;border:1px solid #95999d;background:#d8dadc;color:#34373b;font-weight:800;letter-spacing:.08em;font-size:.68rem;padding:12px 14px}
+.jewel-tab.is-active{background:#313339;color:#fff}
+.jewel-tab:focus-visible{outline:3px solid #813db6;outline-offset:2px}
+.jewel-content{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(240px,1fr);gap:18px;padding:16px 0 4px}
+.collectible-stage{min-height:310px;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(circle at 50% 35%,#e2e3e2,#8d9297);border:1px solid #b6b9bc;perspective:700px;overflow:hidden}
+.collectible-rotator{width:170px;height:170px;display:grid;place-items:center;animation:collectible-turn 8s ease-in-out infinite;transform-style:preserve-3d;filter:drop-shadow(16px 18px 4px #31343a55)}
+.collectible-sprite{width:112px;height:112px;image-rendering:pixelated;background-repeat:no-repeat;background-position:center;background-size:contain}
+.collectible-sprite[data-type="pigeon"]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath fill='%23565c64' d='M5 1h6v2h2v3h1v5h-2v3H4v-2H2V6h2V3h1z'/%3E%3Cpath fill='%23aeb5ba' d='M5 4h6v2H5zM4 7h8v4H4z'/%3E%3Cpath fill='%23833bb9' d='M5 6h2v2H5zM9 6h2v2H9z'/%3E%3Cpath fill='%23e7e7e7' d='M5 6h1v1H5zM9 6h1v1H9z'/%3E%3Cpath fill='%2334373d' d='M7 9h2v2H7z'/%3E%3Cpath fill='%23c07b59' d='M6 14h1v2H6zM10 14h1v2h-1z'/%3E%3C/svg%3E")}
+.collectible-sprite[data-type="hat"]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath fill='%23292c32' d='M5 3h6v1h2v7H3V5h2z'/%3E%3Cpath fill='%235a606a' d='M4 5h8v5H4z'/%3E%3Cpath fill='%23833bb9' d='M7 5h2v4H7z'/%3E%3Cpath fill='%23292c32' d='M3 11h11v2H1v-1h2z'/%3E%3Cpath fill='%23a7acb2' d='M5 3h6v1H5z'/%3E%3C/svg%3E")}
+.collectible-sprite[data-type="cd"]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Cpath fill='%234e535a' d='M5 1h6v1h2v2h1v2h1v5h-1v2h-2v1H4v-1H2v-2H1V5h1V3h2V2h1z'/%3E%3Cpath fill='%23c9ced0' d='M5 2h6v1h2v2h1v6h-1v2H4v-1H3V5h1V3h1z'/%3E%3Cpath fill='%23833bb9' d='M3 5h2v2H3zM11 9h3v2h-3z'/%3E%3Cpath fill='%235e7784' d='M5 3h4v2H5zM4 10h3v3H4z'/%3E%3Cpath fill='%234e535a' d='M7 6h3v1h1v3h-1v1H7v-1H6V7h1z'/%3E%3Cpath fill='%23e2e4e6' d='M8 8h1v1H8z'/%3E%3C/svg%3E")}
+.sprite-hint{font-size:.64rem;letter-spacing:.17em;font-weight:800;color:#454a50}
+.collectible-details{padding:18px 12px}
+.collectible-details h3{font-size:clamp(1.5rem,3vw,2.5rem);line-height:1.1;letter-spacing:-.04em}
+.collectible-details p{line-height:1.6}
+.collectible-meta{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #a6a9ad;padding:14px 0;font-size:.73rem}
+.collectible-meta strong{text-align:right}
+.collectible-note{font-size:.75rem;color:#565a60}
+@keyframes collectible-turn{0%,100%{transform:rotateY(-24deg) rotateX(8deg) translateY(0)}50%{transform:rotateY(24deg) rotateX(-5deg) translateY(-9px)}}
+@media(max-width:720px){.jewel-content{grid-template-columns:1fr}.collectible-stage{min-height:250px}.jewel-tab{flex:1}}
+@media(prefers-reduced-motion:reduce){.collectible-rotator{animation:none}}
