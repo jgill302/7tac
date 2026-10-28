@@ -245,3 +245,30 @@ if(sprite && companionName && companionDescription){
   });
   selectCompanion('pigeon');
 }
+
+
+// Mobile menu and unobtrusive page progress
+const menuToggle=document.querySelector('.menu-toggle');
+const primaryLinks=document.getElementById('primary-links');
+if(menuToggle && primaryLinks){
+  menuToggle.addEventListener('click',()=>{
+    const open=menuToggle.getAttribute('aria-expanded')!=='true';
+    menuToggle.setAttribute('aria-expanded',String(open));
+    primaryLinks.classList.toggle('is-open',open);
+  });
+  primaryLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+    primaryLinks.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }));
+}
+const readingProgress=document.querySelector('.reading-progress');
+if(readingProgress){
+  const updateProgress=()=>{
+    const root=document.documentElement;
+    const total=root.scrollHeight-root.clientHeight;
+    readingProgress.style.width=(total>0?Math.min(100,100*root.scrollTop/total):0)+'%';
+  };
+  window.addEventListener('scroll',updateProgress,{passive:true});
+  window.addEventListener('resize',updateProgress);
+  updateProgress();
+}
