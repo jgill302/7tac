@@ -40,6 +40,16 @@ Rewards are cosmetic by default; physical perks require availability and publish
 - Do not conflate buying an RSVP or event admission with digital purchases. Nightmarket entry remains free; purchases are strictly optional.
 - Keep privacy-respecting records of purchases, entitlements, check-ins, and evolution state; provide email-based account recovery.
 
+## Random starter assignment and owner-only admin console (confirmed direction)
+- Launch with **17 distinct original starter companion archetypes**, not 17 total issued collectibles. Each archetype may have multiple numbered editions. Working starter roster: Platform Pigeon, Fitted Cap, Compact Disc, Subway Ghost, Graffiti Can, Metro Rat, Boombox, Arcade Cabinet, Payphone, Turnstile, Skate Deck, Cassette, Disposable Camera, Sneaker, Streetlight Moth, Pizza Slice, and CRT Monitor. Names/art are placeholders pending creative review.
+- A new verified attendee receives one starter type via **server-side cryptographically secure random selection**, from a versioned distribution. Never select using Math.random on the browser or let users manipulate the result. Prevent duplicate claims, retries, and race conditions using an idempotent transactional claim. Record assigned archetype, distribution version, and audit reference.
+- Default distribution can be equal across 17 types; owner can edit weights and enable/disable types for **future** claims. Changes must not silently rewrite already issued items. Show exact odds publicly before a free random claim. No paid rerolls or paid random packs; any paid upgrade is a transparent fixed-price item.
+- Owner-only admin route (e.g. /admin) must be protected by Supabase Auth and **server-enforced** role-based authorization, not merely hidden in navigation. Use an owner role bound to a verified user UUID, with MFA, short sessions, audit logs, and row-level security. Never store owner password in the repo, browser source, or frontend environment variables.
+- God-mode actions: search users by verified email; inspect companion and stamps; assign a chosen starter, grant or revoke intermediate credits, set stage up to the penultimate form, issue cosmetic items, manage rarity weights, create drops, and correct erroneous records with a reason.
+- **Ultimate form remains attendance-gated even for the owner.** Owner may correct a genuine missed check-in through an auditable attendance-verification workflow, but must not create fictitious attendance or silently bypass the final unlock. This preserves the in-person promise.
+- All admin mutations must execute via trusted server endpoints/database functions with authorization checks, input validation, transactions, and immutable audit entries containing actor, target, before/after values, timestamp, and reason. No client-side privileged database keys. Require confirmation for destructive or bulk changes.
+- Include a preview-only admin UI using local mock data while backend access is not configured; clearly label it nonfunctional and never present it as secure administration.
+
 ## Suggested schema
 companion_drops(id, name, edition_cap, next_serial, opens_at, closes_at, status)
 companions(id, attendee_id, drop_id, edition_number, base_variant, created_at, unique(drop_id,edition_number), unique(drop_id,attendee_id))
@@ -50,6 +60,10 @@ upgrade_products(id, sku, stage_target, price_cents, currency, active)
 purchase_entitlements(id, attendee_id, companion_id, product_id, provider_session_id, granted_at, unique(provider_session_id))
 attendance_seals(id, attendee_id, event_id, issued_at, unique(attendee_id,event_id))
 evolution_events(id, companion_id, from_stage, to_stage, trigger_type, created_at)
+starter_archetypes(id, slug, display_name, active, rarity_weight, art_version)
+claim_distribution_versions(id, created_at, weights_snapshot)
+admin_audit_log(id, actor_user_id, target_user_id, action, before_json, after_json, reason, created_at)
+admin_roles(user_id, role, granted_at)
 All stage transitions must be validated server-side. Ultimate stage requires a valid attendance seal, regardless of purchases.
 Generate serials within database transactions or safe atomic allocation. Validate claims server-side and apply rate limits.
 
@@ -65,6 +79,7 @@ Generate serials within database transactions or safe atomic allocation. Validat
 - Whether each event has its own limited drop or there is one inaugural series.
 - Artwork production (sprite sheets, traits and backgrounds) and physical reward budget.
 - Pricing, intermediate stage thresholds, whether one verified visit suffices for ultimate, and refund rules.
+- Final art and rarity distribution for the 17 archetypes; owner account provisioning and MFA.
 
 ## Status
 Design and engineering specification only. No minted collectibles, accounts, or animation implementation yet.
