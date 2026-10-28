@@ -426,3 +426,17 @@ h1,h2,h3{color:#5b5b67}
 .collectible-note,.sprite-hint{color:#777782}
 @media(max-width:800px){.nav{overflow:visible}.nav-train{opacity:.38;pointer-events:none}.nav ul{z-index:8}.nav ul.is-open{box-shadow:0 12px 25px #77718a15}.jewel-tab{min-height:40px}}
 @media(prefers-reduced-motion:reduce){.nav-train{opacity:.16}}
+
+
+/* Platform-perspective panoramic subway header: full-width continuous train */
+.nav{isolation:isolate;position:relative}
+.nav::before{z-index:-2}
+.nav-train{position:absolute;inset:0;width:100%;height:100%;left:0;top:0;overflow:hidden;z-index:-1;opacity:.72;animation:none;transform:none;border:0;pointer-events:none;background:transparent}
+.nav-train-track{height:100%;width:max-content;display:flex;align-items:stretch;animation:platform-pass 21s linear infinite;will-change:transform}
+.nav-train .subway-car{height:100%;width:720px;flex:0 0 720px;display:block;filter:saturate(.75)}
+@keyframes platform-pass{from{transform:translateX(-1440px)}to{transform:translateX(0)}}
+.nav>.brand,.nav>.menu-toggle,.nav>ul{z-index:3;position:relative}
+.nav>.brand,.nav>ul a,.nav>.menu-toggle{background:rgba(250,249,245,.76);backdrop-filter:blur(5px);border-radius:5px}
+.nav>ul a{padding:5px 6px}
+@media(max-width:800px){.nav-train{inset:0;width:100%;height:100%;opacity:.53;overflow:hidden}.nav-train-track{animation-duration:15s}.nav-train .subway-car{width:540px;flex-basis:540px}.nav>ul{background:#faf9f5;z-index:10}}
+@media(prefers-reduced-motion:reduce){.nav-train-track{animation:none;transform:translateX(-360px)}}
