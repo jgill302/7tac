@@ -46,9 +46,25 @@ Rewards are cosmetic by default; physical perks require availability and publish
 - Default distribution can be equal across 17 types; owner can edit weights and enable/disable types for **future** claims. Changes must not silently rewrite already issued items. Show exact odds publicly before a free random claim. No paid rerolls or paid random packs; any paid upgrade is a transparent fixed-price item.
 - Owner-only admin route (e.g. /admin) must be protected by Supabase Auth and **server-enforced** role-based authorization, not merely hidden in navigation. Use an owner role bound to a verified user UUID, with MFA, short sessions, audit logs, and row-level security. Never store owner password in the repo, browser source, or frontend environment variables.
 - God-mode actions: search users by verified email; inspect companion and stamps; assign a chosen starter, grant or revoke intermediate credits, set stage up to the penultimate form, issue cosmetic items, manage rarity weights, create drops, and correct erroneous records with a reason.
-- **Ultimate form remains attendance-gated even for the owner.** Owner may correct a genuine missed check-in through an auditable attendance-verification workflow, but must not create fictitious attendance or silently bypass the final unlock. This preserves the in-person promise.
+- **Ultimate form is normally attendance-gated, including for owner grants.** The sole deliberate exception is a narrowly scoped, owner-only Birthday God Mode window described below. Ordinary admin controls must never bypass the final attendance requirement.
 - All admin mutations must execute via trusted server endpoints/database functions with authorization checks, input validation, transactions, and immutable audit entries containing actor, target, before/after values, timestamp, and reason. No client-side privileged database keys. Require confirmation for destructive or bulk changes.
 - Include a preview-only admin UI using local mock data while backend access is not configured; clearly label it nonfunctional and never present it as secure administration.
+
+## Birthday God Mode: configurable annual owner override
+- Owner requests a special annual window initially configured for **March 2 in America/Chicago**, matching the owner's stated birthday. The date and time zone are **database configuration**, not constants in application code; owner may edit them through a strongly authenticated settings flow.
+- Default window: local calendar day March 2, 00:00 inclusive through March 3, 00:00 exclusive in the configured IANA time zone. Compute boundaries server-side with time-zone-aware date handling (including DST); never trust browser clock or client flags.
+- During the window, an owner with recent MFA verification may manually grant **Stage 4 / Ultimate** to a selected account without an attendance seal. The grant must be explicitly labeled `birthday_override`, include a reason, and appear in an immutable audit log and recipient's evolution history. It is not represented as a verified visit and does not award a passport stamp.
+- Outside the window, the same override endpoint must reject requests even from the owner; owner can still correct real attendance records via a separately audited process. No standing backdoor, hard-coded secret, or frontend-only restriction.
+- Changes to birthday configuration require recent MFA, confirmation, audit history, and a delayed effective date (e.g. next calendar year) to prevent moving the window on demand. Owner should be able to change the future date without code deployment.
+- Use a single server transaction to check role, MFA freshness, active window, target, and limits; apply evolution and append the audit event. Prevent duplicate or replayed grants. Optional per-window grant quota should be configurable, initially conservative.
+- If an override is later revoked, retain the audit trail. Never delete the historical event.
+
+## Evolution model and art budget
+- **17 base archetypes**, each with **four major evolution forms** (68 major form designs in total, if all 17 are fully produced). Do not assume 10 different evolutionary forms per archetype.
+- **10 verified Nightmarket visits** is a proposed passport milestone track, not a requirement to build ten unique character bodies. At visits 1, 3, 5, and 10, unlock stamps and cosmetic effects such as backgrounds, apparel, animations, alternate textures, or collectible frames.
+- Recommended stage path: Stage 1 Base, Stage 2 Street, Stage 3 Transit, Stage 4 Ultimate. Stages 2 and 3 may be earned through credits or fixed-price purchase; Stage 4 requires a real check-in except the auditable birthday override.
+- Suggested initial ultimate eligibility: Stage 3 + at least one verified visit; consider 3 visits for stronger event retention. Do not equate the 10-visit passport completion milestone with the ultimate evolution unless explicitly decided.
+- Production sequencing: fully illustrate and animate 3 flagship archetypes first; keep remaining 14 as clearly labeled starter previews until their art is completed. Never represent placeholder art as finished.
 
 ## Suggested schema
 companion_drops(id, name, edition_cap, next_serial, opens_at, closes_at, status)
@@ -64,6 +80,9 @@ starter_archetypes(id, slug, display_name, active, rarity_weight, art_version)
 claim_distribution_versions(id, created_at, weights_snapshot)
 admin_audit_log(id, actor_user_id, target_user_id, action, before_json, after_json, reason, created_at)
 admin_roles(user_id, role, granted_at)
+admin_override_settings(id, owner_user_id, month, day, timezone, effective_from_year, updated_at)
+birthday_override_grants(id, owner_user_id, target_companion_id, window_year, reason, created_at, unique(target_companion_id,window_year))
+evolution_events.trigger_type includes 'birthday_override'; birthday overrides never create attendance_seals.
 All stage transitions must be validated server-side. Ultimate stage requires a valid attendance seal, regardless of purchases.
 Generate serials within database transactions or safe atomic allocation. Validate claims server-side and apply rate limits.
 
@@ -80,6 +99,7 @@ Generate serials within database transactions or safe atomic allocation. Validat
 - Artwork production (sprite sheets, traits and backgrounds) and physical reward budget.
 - Pricing, intermediate stage thresholds, whether one verified visit suffices for ultimate, and refund rules.
 - Final art and rarity distribution for the 17 archetypes; owner account provisioning and MFA.
+- Final ultimate attendance threshold (recommend at least one visit), annual birthday grant quota, and whether the birthday date change requires a cooling-off period.
 
 ## Status
 Design and engineering specification only. No minted collectibles, accounts, or animation implementation yet.
