@@ -407,3 +407,22 @@ h1,h2,h3{color:#5b5b67}
 .btn{background:#f6f2f9;color:#746481}
 @media(max-width:800px){.nav-train{top:4px;width:255px;height:50px;animation-duration:17s}.nav ul{background:#faf9f5}}
 @media(prefers-reduced-motion:reduce){.nav-train{display:block;animation:none;transform:translateX(24vw);opacity:.13}}
+
+
+/* Visual QA pass: subtle manga ink, consistent paper surfaces, mobile menu safety */
+.nav-train{opacity:.59}
+.nav-train-art{filter:saturate(.76)}
+.nav{overflow:clip}
+.collectible-section{background:rgba(253,252,249,.86);color:#5b5b67;border-color:#eceae8}
+.collectible-section .subtitle{color:#777782}
+.jewel-shell{background:linear-gradient(145deg,#fffefa,#eeedf1);border:1px solid #e4e0e9;box-shadow:5px 7px 0 #eae7ee,0 12px 30px #77718a0d;border-radius:7px}
+.jewel-tabs{border-bottom:1px solid #e1dce8}
+.jewel-tab{background:#faf8fc;color:#776e85;border:1px solid #e6dfeb;font-weight:600;padding:9px 11px;border-radius:4px}
+.jewel-tab.is-active{background:#e8dafa;color:#65487f;border-color:#d8c3ed}
+.collectible-stage{background:radial-gradient(circle at 50% 35%,#fffefa,#e7e5e8);border-color:#e6e3e9;border-radius:5px}
+.collectible-rotator{filter:drop-shadow(10px 12px 5px #78718a20)}
+.collectible-details h3{font-size:clamp(1.25rem,2.4vw,1.9rem)}
+.collectible-meta{border-top-color:#e6e2e9;color:#777782;padding:10px 0}
+.collectible-note,.sprite-hint{color:#777782}
+@media(max-width:800px){.nav{overflow:visible}.nav-train{opacity:.38;pointer-events:none}.nav ul{z-index:8}.nav ul.is-open{box-shadow:0 12px 25px #77718a15}.jewel-tab{min-height:40px}}
+@media(prefers-reduced-motion:reduce){.nav-train{opacity:.16}}
