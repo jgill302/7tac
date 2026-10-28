@@ -216,3 +216,32 @@ downloadBtn.addEventListener('click', () => {
   link.href = exportCanvas.toDataURL('image/png');
   link.click();
 });
+
+
+// Interactive digital-object preview; no ownership or tickets are issued here.
+const collectibleCatalog = {
+  pigeon: {name:'PLATFORM PIGEON',description:'A subway-side companion. Gray feathers, purple eyes, and an attitude.'},
+  hat: {name:'FITTED 7',description:'An animated pixel fitted cap: a nod to Queens streetwear and late-night platforms.'},
+  cd: {name:'DISC_007',description:'A spinning compact disc from the imaginary 7TAC archive, inspired by multi-disc game cases.'}
+};
+const sprite = document.getElementById('collectible-sprite');
+const companionName = document.getElementById('companion-name');
+const companionDescription = document.getElementById('companion-description');
+if(sprite && companionName && companionDescription){
+  const selectCompanion = (type) => {
+    const selected = collectibleCatalog[type];
+    if(!selected) return;
+    sprite.dataset.type = type;
+    companionName.textContent = selected.name;
+    companionDescription.textContent = selected.description;
+    document.querySelectorAll('[data-companion]').forEach((button)=>{
+      const active = button.dataset.companion === type;
+      button.classList.toggle('is-active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+  };
+  document.querySelectorAll('[data-companion]').forEach((button)=>{
+    button.addEventListener('click',()=>selectCompanion(button.dataset.companion));
+  });
+  selectCompanion('pigeon');
+}
