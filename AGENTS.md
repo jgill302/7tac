@@ -47,3 +47,10 @@ Home | Nightmarket ATX | Shop | Artists / Community | Journal | About / Contact.
 - Use layered jewel-case tabs, disc indexing, translucent acrylic, printed liner notes, and rotating 8-bit/low-poly collectible displays sparingly inside the otherwise minimalist gray website.
 - Companion types are not limited to one pigeon mascot; allow distinct collectible families and cosmetic evolution from verified attendance.
 - A first interactive UI prototype is implemented in the main landing page's Collectibles section on this design branch. It does not issue numbered items or require an email yet.
+
+
+## Retro console terminology and mobile acceptance
+- PlayStation 1 is a 32-bit console; Nintendo 64 is 64-bit. These are CPU/platform descriptors, not sprite bit-depth or polygon counts. The creative references are 8-bit-style pixel sprites, PS1 low-poly 3D and N64 low-poly aesthetics; avoid the inaccurate term '256-bit graphics.'
+- Test viewport widths 320, 375, 390, 768, 1024 and 1440px; no horizontal overflow, touch targets >=44px where practical, readable typography, keyboard-accessible menu and collectible selector.
+- Keep mobile header compact, menu collapsible, and respect reduced-motion preferences.
+- Distinguish committed code from browser-tested behavior; run Vite build and actual mobile browser checks before deployment.
