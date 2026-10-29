@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" preserveAspectRatio="none">
+<defs>
+<linearGradient id="steel" x2="0" y2="1"><stop stop-color="#555c5b"/><stop offset=".15" stop-color="#aeb4ae"/><stop offset=".4" stop-color="#7e8987"/><stop offset=".66" stop-color="#a9aaa0"/><stop offset="1" stop-color="#4c5352"/></linearGradient>
+<linearGradient id="glass" x2="1" y2="1"><stop stop-color="#1b282b"/><stop offset=".45" stop-color="#344747"/><stop offset=".48" stop-color="#889a98"/><stop offset=".55" stop-color="#233536"/><stop offset="1" stop-color="#101d21"/></linearGradient>
+<linearGradient id="paint" x2="0" y2="1"><stop stop-color="#a8c3bd"/><stop offset=".5" stop-color="#6e9f9e"/><stop offset="1" stop-color="#47777f"/></linearGradient>
+<filter id="grit"><feTurbulence baseFrequency=".72 .26" numOctaves="2" seed="7" type="fractalNoise"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope=".2"/></feComponentTransfer><feBlend in="SourceGraphic" mode="multiply"/></filter>
+<pattern id="ribs" width="6" height="4" patternUnits="userSpaceOnUse"><path d="M0 1h6" stroke="#c7c9bc" stroke-opacity=".5"/><path d="M0 3h6" stroke="#343f40" stroke-opacity=".5"/></pattern>
+<g id="door"><rect width="110" height="98" rx="4" fill="#89938f" stroke="#3e4849" stroke-width="3"/><rect x="5" y="3" width="100" height="92" rx="3" fill="none" stroke="#bec1b4"/><path d="M55 2v94" stroke="#333d3f" stroke-width="3"/><rect x="12" y="11" width="31" height="48" rx="6" fill="url(#glass)" stroke="#d2d0bd" stroke-width="2"/><rect x="67" y="11" width="31" height="48" rx="6" fill="url(#glass)" stroke="#d2d0bd" stroke-width="2"/><path d="M46 65v12m18-12v12" stroke="#333d3f" stroke-width="2"/></g>
+<g id="window"><rect width="119" height="45" rx="6" fill="#263335" stroke="#d4d4c6" stroke-width="3"/><rect x="5" y="5" width="109" height="34" rx="4" fill="url(#glass)"/><path d="M4 20h111" stroke="#0c2024" stroke-width="3"/><path d="M9 9h96" stroke="#e0e7cf" stroke-width="2" opacity=".6"/></g>
+</defs>
+<rect width="1200" height="120" fill="#202b2c"/><rect x="8" y="3" width="1174" height="111" rx="7" fill="url(#steel)" stroke="#3f4747" stroke-width="3"/>
+<path d="M13 12h1162M12 17h1165M12 107h1165M12 112h1165" stroke="#bcbdb1"/><path d="M17 20h1155" stroke="#404b4b" stroke-width="4"/>
+<rect x="15" y="70" width="1158" height="35" fill="url(#ribs)"/>
+<use href="#door" x="45" y="14"/><use href="#door" x="412" y="14"/><use href="#door" x="779" y="14"/>
+<use href="#window" x="174" y="25"/><use href="#window" x="305" y="25"/><use href="#window" x="543" y="25"/><use href="#window" x="674" y="25"/><use href="#window" x="910" y="25"/><use href="#window" x="1042" y="25"/>
+<g fill="#202a2c"><rect x="16" y="21" width="24" height="15"/><rect x="1130" y="7" width="38" height="12"/></g><g font-family="monospace" fill="#eee8cf" font-size="9"><text x="17" y="32">7407</text><text x="1136" y="16">7TAC</text></g>
+<g fill="#61747a" opacity=".7"><path d="m24 68 100-14 50 8 120-12 40 17 110-3 50 20-30 25H32z"/><path d="m570 65 65-10 70 14 72-16 75 19 60-14 85 20-10 30H557z"/></g>
+<!-- Original interlocking letter pieces; bold lower-car paint, not the references' tags. -->
+<g stroke="#202c32" stroke-width="5" stroke-linejoin="round" paint-order="stroke fill" transform="translate(168 60) skewX(-13)">
+<path d="M0 9 48 0l-6 17-13 5-7 31H5l10-29-20 5z" fill="#b0c5b7"/>
+<path d="m48 12 30-12 24 8-8 43-19 4 4-15-17 3-5 13-19-2zm18 17 16-3 2-10-12 3z" fill="url(#paint)"/>
+<path d="m110 1 34 1 9 12-20 8-8-7-10 5-5 20 15-3 10-11 17 8-18 19-36 3-9-17 10-31z" fill="#b5a194"/>
+<path d="m165 1 27-5-16 23 15-3-21 38-19 3 12-27-16 3z" fill="#8aa9ac"/>
+<path d="M0 10 45 4M52 14 77 5m36 1 27 1m28-2 17-4" fill="none" stroke="#e3e2cd" stroke-width="2"/>
+</g>
+<g stroke="#233138" stroke-width="5" stroke-linejoin="round" paint-order="stroke fill" transform="translate(624 61) skewX(-12)">
+<path d="m0 10 27-10 23 7-6 14-18-3-8 7 21-1-6 26-30 7-11-15 17-9 3 11 8-3 1-7-24 1z" fill="#c0a078"/>
+<path d="m52 4 36-4 8 10-10 13 8 17-14 14-36-1zm15 10-2 10 12-3 3-9zm-5 20-2 10 14-2 3-10z" fill="url(#paint)"/>
+<path d="m105 2 26-5 12 16-10 36-31 7-13-14zm10 13-9 24 11-2 9-23z" fill="#a4b6ab"/>
+<path d="m149 0 19 4-4 21 20-24 17 6-23 25 14 21-23 1-8-15-10 18-19-5z" fill="#b399a4"/>
+<path d="m203 2 39-3-3 14-24 4-1 6 21-2-5 13-19 3-1 8 27-3-8 13-40 2z" fill="url(#paint)"/>
+<path d="m6 11 20-7m31 4 28-4m23 2 19-4m26 3 10 2m44 1 29-4" fill="none" stroke="#e6dec2" stroke-width="2"/>
+</g>
+<g font-family="Arial Black,Arial,sans-serif" font-style="italic" font-weight="900" stroke-linejoin="round" paint-order="stroke fill"><text x="477" y="94" font-size="30" letter-spacing="-2" fill="#b9a8bf" stroke="#26353a" stroke-width="3" transform="rotate(-4 477 94)">7tac</text><text x="1004" y="92" font-size="25" letter-spacing="-2" fill="#c4c9b3" stroke="#26353a" stroke-width="3" transform="rotate(-6 1004 92)">ATXXX</text></g><g fill="none" stroke="#ddd9c9" stroke-width="1.2"><path d="m475 101 78-8m446 9 92-9"/></g><text x="1111" y="103" font-family="cursive" font-size="9" font-style="italic" fill="#b0b9b1" opacity=".7" transform="rotate(-5 1111 103)">jasg.ill</text>
+<g stroke="#202c2d" stroke-width="1" opacity=".7"><path d="m166 15-1 40m370-40 3 49m363-45-2 37M20 42l5 22m1127-15 5 17M340 97v13m12-13 2 12m426-11 2 11m10-10v11"/></g>
+<rect x="9" y="4" width="1171" height="109" fill="transparent" filter="url(#grit)"/>
+<path d="M1189 5v108" stroke="#131e22" stroke-width="12"/><path d="M1187 15h5m-5 9h5m-5 9h5m-5 9h5m-5 9h5m-5 9h5m-5 9h5m-5 9h5m-5 9h5" stroke="#6c7571" stroke-width="3"/>
+</svg>
