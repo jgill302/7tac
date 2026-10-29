@@ -2,7 +2,7 @@
 title: "Where Did All the Third Spaces Go?"
 slug: "where-did-third-spaces-go"
 excerpt: "A city needs places where you can show up without being expected to spend."
-category: "Culture"
+category: "Nightmarket ATX"
 status: "draft"
 ---
 # Where Did All the Third Spaces Go?

@@ -2,7 +2,7 @@
 title: "After Dark: The Night Market as a Meeting Place"
 slug: "after-dark-night-market"
 excerpt: "Night markets have long brought food, commerce, and community into the same evening."
-category: "Culture"
+category: "Nightmarket ATX"
 status: "draft"
 ---
 # After Dark: The Night Market as a Meeting Place

@@ -1929,3 +1929,24 @@ dialog::backdrop {
     transition: none;
   }
 }
+
+/* Nightmarket has its own after-dark palette. */
+body[data-page="nightmarket"] { --background:#121018; --paper:#24202d; --ink:#eee7f5; --secondary:#c1b5ce; --line:#51465e; --acrylic:#211c2c; color:var(--ink); background:#121018; }
+body[data-page="nightmarket"] main { background:radial-gradient(ellipse at 5% 10%,#57325b55,transparent 38%),radial-gradient(ellipse at 95% 40%,#224f6050,transparent 45%),#121018; }
+.night-manifesto { position:relative; isolation:isolate; overflow:hidden; padding-top:70px; padding-bottom:70px; border-bottom:1px solid #65516d; }
+.night-manifesto::before { content:""; position:absolute; z-index:-1; inset:-30%; background:radial-gradient(ellipse at 25% 40%,#ad419253,transparent 40%),radial-gradient(ellipse at 70% 65%,#327d8860,transparent 45%),radial-gradient(ellipse at 65% 25%,#6649a670,transparent 35%); filter:blur(35px); animation:night-tide 22s ease-in-out infinite alternate; }
+.night-manifesto h1 { font-size:clamp(62px,9vw,140px); line-height:.95; margin:30px 0; letter-spacing:-.06em; }
+.night-manifesto h1 em { color:#d8b4ed; }
+.night-manifesto p { max-width:720px; color:#d1c6da; }
+.night-manifesto .night-lead { font-size:clamp(22px,3vw,34px); color:#f4edf8; }
+.night-manifesto .glass-cta { max-width:350px; }
+body[data-page="nightmarket"] .participation { background:linear-gradient(135deg,#292133,#17272c); }
+body[data-page="nightmarket"] .fine, body[data-page="nightmarket"] .label { color:#beb0cb; }
+body[data-page="nightmarket"] .application-button .label,body[data-page="nightmarket"] .glass-cta .label { color:#64556f; }
+body[data-page="nightmarket"] .game-case { color:#34373d; }
+body[data-page="nightmarket"] .market-poster .label { color:#34373d; }
+body[data-page="nightmarket"] .companion-art { background-color:#393143; }
+body[data-page="nightmarket"] .companion-lab { box-shadow:inset 0 0 0 5px #ffffff08; border-color:#62516e; }
+@keyframes night-tide { from { transform:translate(-3%,-2%) rotate(-8deg) scale(1); } to { transform:translate(4%,3%) rotate(9deg) scale(1.12); } }
+body.motion-paused .night-manifesto::before { animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce) { .night-manifesto::before { animation:none; } }
