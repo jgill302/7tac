@@ -173,27 +173,18 @@ try {
     await page.getByText("To be announced", { exact: true }).isVisible(),
   );
   await page.locator("#collectibles").scrollIntoViewIfNeeded();
-  assert.equal(await page.locator("#companion-select option").count(), 17);
-  await page.locator("#companion-select").selectOption("16");
+
+  assert.equal(await page.locator("#companion-select").count(), 0);
+  assert.equal(await page.locator("#simulate-upgrade").count(), 0);
+  for (const name of ["Compact Disc", "Fitted Cap", "Platform Pigeon"]) {
+    await page.locator("#companion-next").click();
+    assert.equal(await page.locator("#companion-name").textContent(), name);
+  }
+  await page.locator("#companion-prev").click();
   assert.equal(
     await page.locator("#companion-name").textContent(),
-    "CRT Monitor",
+    "Fitted Cap",
   );
-  await page.locator("#companion-select").selectOption("0");
-  await page.locator("#simulate-upgrade").click({ clickCount: 1 });
-  await page.locator("#simulate-upgrade").click();
-  assert.match(await page.locator("#progress-status").textContent(), /TRANSIT/);
-  await page.locator("#simulate-upgrade").click();
-  assert.match(
-    await page.locator("#progress-status").textContent(),
-    /cannot bypass attendance/,
-  );
-  await page.locator("#simulate-visit").click();
-  assert.match(
-    await page.locator("#progress-status").textContent(),
-    /ULTIMATE/,
-  );
-  await page.locator("#reset-progress").click();
   await shot("companion");
   await page.locator(".journal-row").first().click();
   await page.locator("#article-dialog").waitFor({ state: "visible" });
@@ -209,9 +200,31 @@ try {
     await page.evaluate(() => document.body.classList.contains("modal-open")),
     false,
   );
-  await page
-    .getByText("Application & contact preview", { exact: false })
-    .click();
+
+  for (const [key, title] of [
+    ["vendor", "Vendor application"],
+    ["artist", "Artist application"],
+    ["music", "DJ / music application"],
+    ["performance", "Live performance application"],
+    ["partner", "Partner inquiry"],
+    ["idea", "Share an idea"],
+  ]) {
+    await page.locator('[data-application="' + key + '"]').click();
+    assert.equal(await page.locator("#application-title").textContent(), title);
+    assert.equal(await page.locator("#contact-form select").inputValue(), key);
+    assert.equal(
+      await page.locator("#application-preview").getAttribute("open"),
+      "",
+    );
+  }
+  await page.locator("#application-preview summary").click();
+  await page.locator("#contact").scrollIntoViewIfNeeded();
+  await shot("participation-desktop");
+  await page.setViewportSize({ width: 390, height: 900 });
+  await page.locator("#contact").scrollIntoViewIfNeeded();
+  await shot("participation-mobile");
+  await page.setViewportSize({ width: 1440, height: 900 });
+
   assert.equal(await page.locator("#contact-form button").isDisabled(), true);
   await page.goto(base);
   assert.equal(await page.locator("#nightmarket + #contact").count(), 1);
@@ -347,8 +360,8 @@ try {
           "event progression and applications confined to Nightmarket",
           "train movement",
           "reduced motion",
-          "17 starters",
-          "Ultimate prerequisites",
+          "three curated objects, forward and reverse wrap",
+          "six role-specific application previews",
           "journal draft navigation",
           "spray density, slight drips, strict train mask, sound graph and mute, clear and download",
           "disabled unconnected form",

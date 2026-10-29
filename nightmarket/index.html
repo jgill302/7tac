@@ -51,13 +51,21 @@
           ><a href="/nightmarket/#collectibles"
             ><small>04</small>The archive <span>↗</span></a
           ><a href="/#journal"><small>05</small>Journal <span>↗</span></a
-          ><a href="/#graffiti"
-            ><small>06</small>Graffiti train <span>↗</span></a
+          ><a href="/#graffiti"><small>06</small>After hours <span>↗</span></a
           ><a href="/#contact"><small>07</small>Contact <span>↗</span></a>
         </nav>
       </div>
       <div class="menu-bottom label">
-        INDEPENDENT CULTURE. SHARED FREQUENCY.
+        <div class="quote-channel">
+          <span id="matrix-quote">Follow the white rabbit.</span
+          ><button
+            id="quote-toggle"
+            aria-label="Pause quote rotation"
+            aria-pressed="false"
+          >
+            Ⅱ
+          </button>
+        </div>
         <a href="/nightmarket/">NIGHTMARKET.ATX ↗</a>
       </div>
     </dialog>
@@ -135,57 +143,131 @@
               RSVP opens when the next event is announced. No tickets are being
               issued yet.
             </p>
-            <details class="participate">
-              <summary>Be part of Nightmarket <span>+</span></summary>
-              <p>
-                Standard participation is intended to be free for accepted
-                independent vendors, subject to event rules. Selection is
-                curated; commercial partnerships have separate terms.
-              </p>
-              <a class="text-link" href="#contact"
-                >Vendors, artists & partners ↗</a
-              >
-            </details>
+            <a class="glass-cta" href="#contact"
+              ><span class="label">OPEN CALL / COMING SOON</span
+              ><strong
+                >Be part of Nightmarket
+                <span aria-hidden="true">↗</span></strong
+              ></a
+            >
           </div>
         </div>
       </section>
-      <section class="shell section contact" id="contact">
-        <span class="label">PARTICIPATE / NIGHTMARKET ATX</span>
-        <h2>A place for<br />your point of view.</h2>
-        <p>
-          Independent makers, artists, DJs, and people with an idea.<br />There’s
-          room for a conversation.
-        </p>
-        <details>
-          <summary>Application & contact preview <span>+</span></summary>
+      <section class="shell section contact participation" id="contact">
+        <div class="participation-heading">
+          <div>
+            <span class="label">PARTICIPATE / NIGHTMARKET ATX</span>
+            <h2>Bring your thing.</h2>
+          </div>
           <p>
-            Applications are not open yet. This is a provisional form preview;
-            submissions are disabled until secure storage is connected.
+            Sound, art, a table, an idea.<br />Find your way into the night.
+          </p>
+        </div>
+        <div class="application-options" aria-label="Participation options">
+          <button
+            class="application-button"
+            data-application="vendor"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">01 / OPEN CALL</span
+            ><strong>Vendors<span aria-hidden="true">↗</span></strong
+            ><small>Objects, food & independent makers</small>
+          </button>
+          <button
+            class="application-button"
+            data-application="artist"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">02 / OPEN CALL</span
+            ><strong>Artists<span aria-hidden="true">↗</span></strong
+            ><small>Visual art, installations & exhibitions</small>
+          </button>
+          <button
+            class="application-button"
+            data-application="music"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">03 / OPEN CALL</span
+            ><strong>DJs / music<span aria-hidden="true">↗</span></strong
+            ><small>Selectors, producers & live sets</small>
+          </button>
+          <button
+            class="application-button"
+            data-application="performance"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">04 / OPEN CALL</span
+            ><strong>Live performance<span aria-hidden="true">↗</span></strong
+            ><small>Movement, spoken word & beyond</small>
+          </button>
+          <button
+            class="application-button"
+            data-application="partner"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">05 / OPEN CALL</span
+            ><strong>Partners<span aria-hidden="true">↗</span></strong
+            ><small>Spaces, brands & collaborations</small>
+          </button>
+          <button
+            class="application-button"
+            data-application="idea"
+            aria-controls="application-preview"
+            aria-expanded="false"
+          >
+            <span class="label">06 / OPEN CALL</span
+            ><strong>Bring an idea<span aria-hidden="true">↗</span></strong
+            ><small>Something we haven’t thought of yet</small>
+          </button>
+        </div>
+        <p class="fine application-note">
+          Applications opening soon. Choose a path to preview what we’ll ask
+          for.
+        </p>
+        <details id="application-preview">
+          <summary>
+            <span id="application-title">Application preview</span
+            ><span>+</span>
+          </summary>
+          <p id="application-description">
+            Choose how you’d like to take part.
+          </p>
+          <p class="fine">
+            Preview only. Applications are not being collected yet.
           </p>
           <form id="contact-form">
             <fieldset disabled>
               <label
-                >I'm here as a<select name="type">
-                  <option>Independent vendor</option>
-                  <option>Artist / performer</option>
-                  <option>Sponsor / partner</option>
-                  <option>General inquiry</option>
+                >Applying as<select name="type">
+                  <option value="vendor">Vendors</option>
+                  <option value="artist">Artists</option>
+                  <option value="music">DJs / music</option>
+                  <option value="performance">Live performance</option>
+                  <option value="partner">Partners</option>
+                  <option value="idea">Bring an idea</option>
                 </select></label
-              ><label
-                >Name / organization<input
-                  name="name"
-                  autocomplete="name" /></label
-              ><label
-                >Email<input
-                  name="email"
-                  type="email"
-                  autocomplete="email" /></label
-              ><label
-                >Tell us about your idea<textarea
-                  name="message"
-                  rows="3"
-                ></textarea></label
-              ><button type="submit">Applications opening soon</button>
+              >
+              <label
+                >Name / organization<input name="name" autocomplete="name"
+              /></label>
+              <label
+                >Email<input name="email" type="email" autocomplete="email"
+              /></label>
+              <label
+                ><span id="application-link-label">Website / social link</span
+                ><input name="link" type="url"
+              /></label>
+              <label
+                ><span id="application-message-label"
+                  >Tell us about your idea</span
+                ><textarea name="message" rows="3"></textarea>
+              </label>
+              <button type="submit">Applications opening soon</button>
             </fieldset>
           </form>
         </details>
@@ -209,7 +291,7 @@
         <div class="companion-lab">
           <div class="companion-display">
             <div class="lab-toolbar">
-              <span class="label" id="companion-index">01 / 17</span>
+              <span class="label" id="companion-index">01 / 03</span>
               <div>
                 <button id="companion-prev" aria-label="Previous companion">
                   ←</button
@@ -228,37 +310,20 @@
               <h3 id="companion-name">Platform Pigeon</h3>
               <span class="label">UNISSUED / ART STUDY</span>
             </div>
-            <label class="label" for="companion-select"
-              >EXPLORE THE STARTERS</label
-            ><select id="companion-select"></select>
           </div>
           <div class="companion-progress">
-            <span class="label">COMPANION LAB / SIMULATION</span>
-            <h3>Take the long way home.</h3>
-            <div class="evolution" id="evolution"></div>
+            <span class="label">THREE OBJECTS / A FIRST LOOK</span>
+            <h3>Keep a piece.<br />Come back for more.</h3>
+            <p>
+              Start with an archive piece. Let it grow with the nights you
+              share.
+            </p>
             <p class="fine">
               Street and Transit can be earned or optionally upgraded. Ultimate
               requires Transit plus verified attendance. Ten visits form a
               separate passport track.
             </p>
-            <div class="lab-actions">
-              <button id="earn-credit">Simulate credit</button
-              ><button id="simulate-upgrade">Simulate upgrade</button
-              ><button id="simulate-visit">Simulate visit</button
-              ><button id="reset-progress">Reset</button>
-            </div>
-            <p id="progress-status" role="status"></p>
-            <div
-              class="passport"
-              id="passport"
-              aria-label="Simulated passport progress"
-            ></div>
-            <p class="fine">
-              Nothing is saved, purchased, assigned, or verified here.
-              Production account, payment, and attendance services are not
-              connected. Remaining starter artwork is labeled as placeholder
-              studies.
-            </p>
+            <span class="label">PREVIEW ONLY / NOT YET ISSUED</span>
           </div>
         </div>
       </section>
