@@ -1950,3 +1950,36 @@ body[data-page="nightmarket"] .companion-lab { box-shadow:inset 0 0 0 5px #fffff
 @keyframes night-tide { from { transform:translate(-3%,-2%) rotate(-8deg) scale(1); } to { transform:translate(4%,3%) rotate(9deg) scale(1.12); } }
 body.motion-paused .night-manifesto::before { animation-play-state:paused; }
 @media(prefers-reduced-motion:reduce) { .night-manifesto::before { animation:none; } }
+
+/* Explicit surface palettes prevent dark-page tokens leaking onto light UI. */
+dialog {
+  --ink:#34373d; --secondary:#595562; --paper:#f5f4f0; --line:#c9c5cf;
+  color:#34373d; background:#f5f4f0;
+}
+body[data-page="nightmarket"] dialog .label,
+body[data-page="nightmarket"] dialog .fine { color:#595562; }
+body[data-page="nightmarket"] .brand { color:#34373d; }
+body[data-page="nightmarket"] .glass-cta,
+body[data-page="nightmarket"] .application-button {
+  background:linear-gradient(135deg,#f2edf8,#d3c3e5 55%,#ebe3f3);
+  color:#393344;
+}
+body[data-page="nightmarket"] .application-button:hover,
+body[data-page="nightmarket"] .application-button[aria-expanded="true"],
+body[data-page="nightmarket"] .glass-cta:hover {
+  background:linear-gradient(135deg,#fff,#e1d2ef);
+  color:#32273e;
+}
+body[data-page="nightmarket"] .game-case .case-format { color:#514b5b; }
+body[data-page="nightmarket"] .market-details > p,
+body[data-page="nightmarket"] .archive-intro > p { color:#d1c6da; }
+body[data-page="nightmarket"] main a:not(.glass-cta):hover,
+body[data-page="nightmarket"] footer a:hover { color:#e4c3f7; }
+body[data-page="nightmarket"] .lab-toolbar button:hover,
+body[data-page="nightmarket"] footer button:hover { color:#24202d; }
+#quote-toggle { border-color:#b7b0c0; }
+fieldset:disabled { opacity:1; }
+fieldset:disabled input, fieldset:disabled textarea, fieldset:disabled select,
+button:disabled { opacity:1; color:#aaa0b5; }
+body:not([data-page="nightmarket"]) button:disabled { color:#595562; }
+#article-content p { overflow-wrap:break-word; }
