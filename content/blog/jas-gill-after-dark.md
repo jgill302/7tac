@@ -1,5 +1,5 @@
 ---
-title: "Jas Gill, After Dark"
+title: "Founder chat, After Dark"
 slug: "jas-gill-after-dark"
 category: "Nightmarket ATX"
 status: "draft"
@@ -10,7 +10,7 @@ A founder conversation, shaped by the Nightmarket × 7TAC team. This editorial d
 
 Where does this begin?
 
-With humble beginnings and a New York nightlife sensibility. Jas Gill brings the spirit of ’90s NYC to Nightmarket.atx: independent, curious, and more interested in who is in the room than who is on the list.
+Jas Gill brings the spirit of ’90s NYC to Nightmarket.atx: independent, curious, and more interested in who is in the room than who is on the list.
 
 What does architecture have to do with a night out?
 
