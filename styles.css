@@ -1774,3 +1774,179 @@ dialog::backdrop {
   object-fit: contain;
   margin: 0.4cqw auto 0.2cqw;
 }
+
+/* Clear lilac acrylic controls, with inset edges and a restrained LCD face. */
+.glass-cta,
+.application-button {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 24px;
+  color: #393344;
+  text-align: left;
+  border: 1px solid #aaa0bb;
+  border-radius: 12px;
+  background:
+    linear-gradient(125deg, #ffffffb8, #ffffff14 42%, #b9a5d137),
+    linear-gradient(
+      180deg,
+      #ede7f5a8 0%,
+      #d4c4e65c 49%,
+      #baa5d24a 50%,
+      #eee8f6b3 100%
+    );
+  box-shadow:
+    inset 0 2px 1px #fff,
+    inset 0 -3px 2px #8d7e9b33,
+    0 5px 0 #d3cdd94d,
+    0 12px 22px #41334e0a;
+  backdrop-filter: blur(14px);
+  font-family: var(--display);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
+}
+.glass-cta {
+  margin-top: 26px;
+}
+.glass-cta strong,
+.application-button strong {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.2;
+  font-weight: 500;
+}
+.glass-cta:hover,
+.application-button:hover,
+.application-button[aria-expanded="true"] {
+  color: #32273e;
+  border-color: #80668f;
+  background: linear-gradient(135deg, #fff9, #dacbec80);
+  box-shadow:
+    inset 0 2px 1px white,
+    inset 0 -3px 2px #8d7e9b33,
+    0 5px 0 #c1b4cc55,
+    0 12px 24px #58436812;
+}
+.participation {
+  background:
+    radial-gradient(ellipse at 90% 0, #d8d0e528, transparent 60%), #efeeec;
+}
+.participation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.participation-heading h2 {
+  margin-bottom: 0;
+}
+.participation-heading p {
+  margin: 0;
+}
+.application-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.application-button {
+  min-height: 170px;
+}
+.application-button .label {
+  color: #64556f;
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+.application-button small {
+  font-family: var(--body);
+  font-size: 13px;
+  line-height: 1.5;
+  color: #655d6e;
+}
+.application-note {
+  margin-top: 24px;
+}
+.participation #application-preview {
+  max-width: none;
+  margin-top: 22px;
+}
+.quote-channel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 650px;
+}
+#matrix-quote {
+  text-transform: uppercase;
+}
+#quote-toggle {
+  flex: 0 0 44px;
+  padding: 6px;
+  background: transparent;
+  border-color: #ffffff30;
+  color: inherit;
+}
+.scene-caption {
+  justify-content: flex-end;
+}
+@media (max-width: 900px) {
+  .application-options {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .participation-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 520px) {
+  .application-options {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .application-button {
+    min-height: 138px;
+    padding: 20px;
+    gap: 10px;
+  }
+  .quote-channel {
+    align-items: center;
+    width: 100%;
+    min-height: 66px;
+    justify-content: space-between;
+  }
+  #matrix-quote {
+    max-width: 30ch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-cta,
+  .application-button {
+    transition: none;
+  }
+}
+
+/* Nightmarket has its own after-dark palette. */
+body[data-page="nightmarket"] { --background:#121018; --paper:#24202d; --ink:#eee7f5; --secondary:#c1b5ce; --line:#51465e; --acrylic:#211c2c; color:var(--ink); background:#121018; }
+body[data-page="nightmarket"] main { background:radial-gradient(ellipse at 5% 10%,#57325b55,transparent 38%),radial-gradient(ellipse at 95% 40%,#224f6050,transparent 45%),#121018; }
+.night-manifesto { position:relative; isolation:isolate; overflow:hidden; padding-top:70px; padding-bottom:70px; border-bottom:1px solid #65516d; }
+.night-manifesto::before { content:""; position:absolute; z-index:-1; inset:-30%; background:radial-gradient(ellipse at 25% 40%,#ad419253,transparent 40%),radial-gradient(ellipse at 70% 65%,#327d8860,transparent 45%),radial-gradient(ellipse at 65% 25%,#6649a670,transparent 35%); filter:blur(35px); animation:night-tide 22s ease-in-out infinite alternate; }
+.night-manifesto h1 { font-size:clamp(62px,9vw,140px); line-height:.95; margin:30px 0; letter-spacing:-.06em; }
+.night-manifesto h1 em { color:#d8b4ed; }
+.night-manifesto p { max-width:720px; color:#d1c6da; }
+.night-manifesto .night-lead { font-size:clamp(22px,3vw,34px); color:#f4edf8; }
+.night-manifesto .glass-cta { max-width:350px; }
+body[data-page="nightmarket"] .participation { background:linear-gradient(135deg,#292133,#17272c); }
+body[data-page="nightmarket"] .fine, body[data-page="nightmarket"] .label { color:#beb0cb; }
+body[data-page="nightmarket"] .application-button .label,body[data-page="nightmarket"] .glass-cta .label { color:#64556f; }
+body[data-page="nightmarket"] .game-case { color:#34373d; }
+body[data-page="nightmarket"] .market-poster .label { color:#34373d; }
+body[data-page="nightmarket"] .companion-art { background-color:#393143; }
+body[data-page="nightmarket"] .companion-lab { box-shadow:inset 0 0 0 5px #ffffff08; border-color:#62516e; }
+@keyframes night-tide { from { transform:translate(-3%,-2%) rotate(-8deg) scale(1); } to { transform:translate(4%,3%) rotate(9deg) scale(1.12); } }
+body.motion-paused .night-manifesto::before { animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce) { .night-manifesto::before { animation:none; } }
