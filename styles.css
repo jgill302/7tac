@@ -1983,3 +1983,39 @@ fieldset:disabled input, fieldset:disabled textarea, fieldset:disabled select,
 button:disabled { opacity:1; color:#aaa0b5; }
 body:not([data-page="nightmarket"]) button:disabled { color:#595562; }
 #article-content p { overflow-wrap:break-word; }
+
+/* Compact interactive event artifact and readable Nightmarket grids. */
+.night-manifesto { display:grid; grid-template-columns:1fr 1fr; gap:16px 48px; align-items:start; }
+.night-manifesto > .label, .night-manifesto h1, .night-manifesto .night-lead { grid-column:1/-1; }
+.night-manifesto p { margin:0; max-width:65ch; }
+.night-manifesto .glass-cta { margin-top:0; align-self:center; }
+body[data-page="nightmarket"] .market-grid { grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:40px; align-items:center; }
+.case-experience { min-width:0; display:grid; justify-items:center; gap:28px; padding:30px 16px; perspective:1100px; }
+.case-object { position:relative; width:100%; max-width:400px; transform-style:preserve-3d; animation:case-turn 12s ease-in-out infinite alternate; }
+.case-object .game-case { position:relative; z-index:2; transform-origin:left center; transition:transform 1s ease; backface-visibility:hidden; }
+.case-object.case-open { animation-play-state:paused; }
+.case-object.case-open .game-case { transform:rotateY(-105deg); pointer-events:none; }
+.disc-tray { position:absolute; inset:0; display:grid; place-items:center; border:6px ridge #bcb9c4; border-radius:5px; background:linear-gradient(135deg,#34313c,#17151d); box-shadow:0 20px 45px #0005; }
+.event-disc { width:85%; aspect-ratio:1; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center; color:#292332; background:conic-gradient(#d2c9e4,#a4dbd7,#f7e3ed,#a9a0c9,#f4eac8,#d2c9e4); border:1px solid #eeedf5; box-shadow:inset 0 0 0 9px #ffffff38,inset 0 0 0 12px #7e73872b; font-family:var(--display); }
+.event-disc strong { font-size:clamp(18px,2.5vw,30px); line-height:1.05; }
+.event-disc span,.event-disc small { font-size:9px; letter-spacing:.1em; }
+.event-disc i { width:25px; height:25px; background:#25212c; border:5px solid #c4bdcf; border-radius:50%; }
+body[data-page="nightmarket"] .rsvp-title { font-size:clamp(64px,8vw,110px); line-height:.95; margin:16px 0 24px; }
+.rsvp-title span { display:block; font-size:14px; letter-spacing:.16em; margin-top:18px; }
+body[data-page="nightmarket"] .archive-intro { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; }
+body[data-page="nightmarket"] .application-button { min-height:145px; justify-content:center; }
+@keyframes case-turn { from { transform:rotateY(-12deg) rotateZ(-2deg); } to { transform:rotateY(12deg) rotateZ(2deg); } }
+body.motion-paused .case-object { animation-play-state:paused; }
+@media(max-width:760px) {
+ .night-manifesto { grid-template-columns:1fr; gap:22px; padding-top:42px; padding-bottom:42px; }
+ .night-manifesto h1 { margin:8px 0; }
+ .night-manifesto .glass-cta { max-width:none; width:100%; }
+ body[data-page="nightmarket"] .market-grid,body[data-page="nightmarket"] .archive-intro { grid-template-columns:1fr; gap:28px; }
+ .case-object { max-width:300px; }
+ .case-experience { padding:12px 26px; }
+ .case-object.case-open .game-case { transform:rotateY(-95deg); }
+ body[data-page="nightmarket"] .market-details { padding:0; }
+ body[data-page="nightmarket"] .section { padding-top:40px; padding-bottom:40px; }
+ body[data-page="nightmarket"] .application-button { min-height:125px; }
+}
+@media(prefers-reduced-motion:reduce) { .case-object { animation:none; } .case-object .game-case { transition:none; } }

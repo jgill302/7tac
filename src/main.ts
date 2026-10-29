@@ -287,3 +287,18 @@ article.addEventListener("close", () => {
 window.addEventListener("hashchange", showArticle);
 showArticle();
 $("contact-form")?.addEventListener("submit", (e) => e.preventDefault());
+
+const caseToggle = document.getElementById("case-toggle");
+caseToggle?.addEventListener("click", () => {
+  const open = caseToggle.getAttribute("aria-expanded") !== "true";
+  caseToggle.setAttribute("aria-expanded", String(open));
+  document.querySelector(".case-object")?.classList.toggle("case-open", open);
+  document.getElementById("nightmarket-disc")?.setAttribute("aria-hidden", String(!open));
+  caseToggle.textContent = open ? "Close the case ↙" : "Open the case ↗";
+});
+
+const caseCover = document.querySelector<HTMLElement>('.case-object .game-case');
+caseCover?.addEventListener('click', () => caseToggle?.click());
+caseCover?.addEventListener('keydown', (event) => {
+ if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); caseToggle?.click(); caseToggle?.focus(); }
+});
