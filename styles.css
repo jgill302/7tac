@@ -2019,3 +2019,24 @@ body.motion-paused .case-object { animation-play-state:paused; }
  body[data-page="nightmarket"] .application-button { min-height:125px; }
 }
 @media(prefers-reduced-motion:reduce) { .case-object { animation:none; } .case-object .game-case { transition:none; } }
+
+.collective-character { display:grid; place-items:center; perspective:700px; min-width:0; }
+.collective-character svg { width:clamp(140px,18vw,240px); max-width:100%; filter:drop-shadow(0 18px 12px #0004); animation:pigeon-turn 14s ease-in-out infinite alternate; }
+@keyframes pigeon-turn { from { transform:rotateY(-32deg) rotateZ(-4deg); } to { transform:rotateY(32deg) rotateZ(4deg); } }
+body:not([data-page]) .market-details h3 { font-size:clamp(42px,5.5vw,84px); line-height:1; letter-spacing:-.045em; }
+body:not([data-page]) .market-details > p { font-size:clamp(21px,2.1vw,30px); line-height:1.3; }
+body:not([data-page]) .market-details > .market-explainer { font-size:17px; line-height:1.65; max-width:48ch; }
+.merch-soon { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; }
+.merch-soon h2 { margin:16px 0; }
+.merch-placeholder { min-height:240px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; border:1px solid #c2bfca; border-radius:6px; background:linear-gradient(130deg,#f7f6f8,#dcd9e1 50%,#f0eef4); box-shadow:inset 0 0 0 5px #ffffff70; }
+.merch-placeholder strong { font:500 clamp(32px,4vw,58px)/1 var(--display); letter-spacing:.05em; color:#62596b; }
+.nightmarket-link { animation:night-neon 4s ease-in-out infinite alternate; }
+@keyframes night-neon { from { text-shadow:0 0 3px #b165cc55; } to { text-shadow:0 0 4px #bc6cdd,0 0 10px #ba6cda99,0 0 20px #b56cd15e; } }
+body.motion-paused .collective-character svg,body.motion-paused .nightmarket-link { animation-play-state:paused; }
+@media(max-width:760px) {
+ .merch-soon { grid-template-columns:1fr; gap:20px; }
+ .merch-placeholder { min-height:190px; }
+ .collective-character { padding-top:12px; }
+ .collective-character svg { width:160px; }
+}
+@media(prefers-reduced-motion:reduce) { .collective-character svg,.nightmarket-link { animation:none; } }
