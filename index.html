@@ -1,222 +1,285 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>7tac | Based in the Essence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="7 Train Art Co. A Queens-rooted creative platform connecting sound, art, physical culture, and people. Based in the essence."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#FAF9F5" />
+    <title>7TAC — Based in the Essence.</title>
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <div class="bg-gif bg-gif-1" aria-hidden="true"></div>
-    <div class="bg-gif bg-gif-2" aria-hidden="true"></div>
-
-    <header class="hero" id="top">
-      <nav class="nav container">
-        <div class="brand">7tac</div>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#nightmarket">Nightmarket ATX</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#graffiti">Graffiti Train</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <section class="hero-content container">
-        <p class="kicker">7 train art co • based in the essence</p>
-        <h1>NYC house + techno arts energy, now lighting up Austin nights.</h1>
-        <p>
-          7tac is a born-and-bred electronic arts collective merging underground sound,
-          visual experimentation, and culture-forward community spaces.
-        </p>
-        <a class="btn" href="#nightmarket">Enter Nightmarket ATX</a>
-      </section>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="train-panorama" aria-hidden="true"></div>
+      <button
+        class="brand"
+        id="menu-toggle"
+        aria-label="Open 7TAC navigation"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M8 10h49v11L33 55H17l25-32H8z" />
+          <path d="M9 30h20l-7 9H9z" /></svg
+        ><span>MENU <span aria-hidden="true">+</span></span>
+      </button>
+      <a class="nightmarket-link" href="/nightmarket/"
+        >NIGHTMARKET.ATX <span aria-hidden="true">↗</span></a
+      >
     </header>
-
-    <main>
-      <section class="panel container reveal" id="about">
-        <h2>About Us</h2>
-        <p>
-          We are <strong>7 train art co</strong> (7tac): a NYC-rooted house and techno
-          collective building immersive experiences in Austin, Texas. Every project is
-          guided by one mantra: <em>based in the essence</em>.
-        </p>
-        <p>
-          From sonic journeys to visual installations and collaborative popups, we protect
-          authentic culture while creating room for emerging creatives.
-        </p>
-      </section>
-
-      <section class="panel container reveal" id="nightmarket">
-        <h2>Nightmarket ATX</h2>
-        <p class="subtitle">
-          A night market with NYC flavor: real cultural drive, no culture-vulture cosplay.
-        </p>
-        <div class="grid two-col">
-          <article class="card">
-            <h3>Apply to be a Vendor</h3>
-            <form id="vendor-form" class="stack-form">
-              <label>
-                Brand / Artist Name
-                <input type="text" name="vendorName" required />
-              </label>
-              <label>
-                Category
-                <input type="text" name="category" placeholder="Fashion, Art, Food, etc." required />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" required />
-              </label>
-              <label>
-                Why Nightmarket ATX?
-                <textarea name="pitch" rows="4" required></textarea>
-              </label>
-              <button type="submit" class="btn">Submit Vendor Application</button>
-              <p class="form-status" id="vendor-status" aria-live="polite"></p>
-            </form>
-          </article>
-
-          <article class="card">
-            <h3>Next Events Calendar</h3>
-            <p>Admins can add upcoming Nightmarket ATX dates and locations below.</p>
-            <form id="event-form" class="stack-form compact">
-              <label>
-                Event Date
-                <input type="date" id="event-date" required />
-              </label>
-              <label>
-                Location
-                <input type="text" id="event-location" placeholder="Venue + City" required />
-              </label>
-              <button type="submit" class="btn ghost">Add Event</button>
-            </form>
-            <p class="next-up" id="next-up" aria-live="polite"></p>
-            <ul id="event-list" class="event-list"></ul>
-          </article>
+    <dialog id="navigation" aria-label="7TAC navigation">
+      <div class="menu-top">
+        <span class="label">7 TRAIN ART CO. / DIRECTORY</span
+        ><button id="menu-close" aria-label="Close navigation">CLOSE ×</button>
+      </div>
+      <div class="menu-layout">
+        <div class="menu-art">
+          <span class="label">QUEENS, NY ↔ AUSTIN, TX</span>
+          <div class="outline-seven" aria-hidden="true">7</div>
+          <p>Sound. Objects. People.<br />Everything is connected.</p>
+        </div>
+        <nav aria-label="Main navigation">
+          <a href="#about"><small>01</small>About <span>↗</span></a
+          ><a href="/nightmarket/"
+            ><small>02</small>Nightmarket ATX <span>↗</span></a
+          ><a href="#shop"><small>03</small>Merch · coming soon <span>↗</span></a
+          ><a href="/nightmarket/#collectibles"
+            ><small>04</small>The archive <span>↗</span></a
+          ><a href="#journal"><small>05</small>Journal <span>↗</span></a
+          ><a href="#graffiti"><small>06</small>After hours <span>↗</span></a
+          ><a href="#contact"><small>07</small>Contact <span>↗</span></a>
+        </nav>
+      </div>
+      <div class="menu-bottom label">
+        <div class="quote-channel">
+          <span id="matrix-quote">Follow the white rabbit.</span
+          ><button
+            id="quote-toggle"
+            aria-label="Pause quote rotation"
+            aria-pressed="false"
+          >
+            Ⅱ
+          </button>
+        </div>
+        <a href="/nightmarket/">NIGHTMARKET.ATX ↗</a>
+      </div>
+    </dialog>
+    <main id="main">
+      <section class="hero shell" aria-labelledby="hero-title">
+        <div class="edition-line label">
+          <span
+            >7 TRAIN ART CO.
+            <span class="muted">/ INDEPENDENT CULTURE</span></span
+          ><span>NYC ↔ ATX · VOL. 001</span>
+        </div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="label">SOUND / ART / PHYSICAL CULTURE</p>
+            <h1 id="hero-title">BASED IN<br />THE <em>ESSENCE.</em></h1>
+            <p class="intro">
+              Queens roots. Shared frequencies.<br />Sound, art, and the people
+              behind it.
+            </p>
+            <a class="text-link" href="/nightmarket/"
+              >Find your people <span>↗</span></a
+            >
+          </div>
+          <div
+            class="artifact-scene"
+            aria-label="Original translucent 7TAC archive disc case illustration"
+          >
+            <div class="scene-grid" aria-hidden="true"></div>
+            <span class="object-coordinate label"
+              >OBJECT_001 / CULTURAL MEMORY</span
+            >
+            <div class="case-shadow" aria-hidden="true"></div>
+            <div class="jewel-case" aria-hidden="true">
+              <div class="case-spine">
+                7 TRAIN ART CO. — THE ESSENCE COLLECTION — VOL. 001
+              </div>
+              <div class="case-face">
+                <div class="case-heading">
+                  <b>7TAC</b><span>INDEPENDENT<br />FREQUENCIES</span>
+                </div>
+                <div class="disc">
+                  <div class="disc-rings"></div>
+                  <span>BASED IN THE ESSENCE · 7 TRAIN ART CO ·</span>
+                  <div class="disc-hole"></div>
+                </div>
+                <div class="case-foot">
+                  <span>NYC ↔ ATX<br />ARCHIVE SERIES</span><b>001</b
+                  ><span>NO ALGORITHM.<br />JUST CONNECTION.</span>
+                </div>
+              </div>
+            </div>
+            <div class="artifact-ticket">
+              <span class="label">KEEP SOMETHING REAL.</span
+              ><span class="ticket-barcode" aria-hidden="true"></span
+              ><small>7TAC—NYC—ATX—001</small>
+            </div>
+            <div class="scene-caption label">
+              <a href="/nightmarket/">EXPLORE NIGHTMARKET ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="index-strip label">
+          <span>A COLLECTIVE, NOT A CATEGORY.</span
+          ><a href="/nightmarket/">01 / GATHERINGS ↗</a
+          ><a href="#shop">02 / MERCH ↗</a
+          ><a href="#journal">03 / FIELD NOTES ↗</a>
         </div>
       </section>
-
-      <section class="panel container reveal" id="blog">
-        <h2>7tac Blog</h2>
-        <p class="subtitle">
-          Stories from the scene that pull you from scrolling into the next Nightmarket ATX date.
-        </p>
-        <div class="blog-cta card">
-          <h3>Build your 3rd place with us</h3>
+      <section class="about shell section" id="about">
+        <div class="section-id label">01 / THE COLLECTIVE</div>
+        <div>
+          <h2>Different cities.<br />The same frequency.</h2>
           <p>
-            Nightmarket ATX is designed as a real third place in Austin—where underground sound
-            (triphop, house, dnb), physical media, and community presence matter more than clout.
+            From Queens platforms to Austin after dark.<br />Independent sound,
+            art, and physical culture.
           </p>
-          <a class="btn" href="#nightmarket">See Next Nightmarket Dates</a>
         </div>
-        <div class="grid three-col" id="blog-posts"></div>
+        <div class="collective-character" role="img" aria-label="Rotating Platform Pigeon illustration"><svg viewBox="0 0 200 200" aria-hidden="true"><path fill="#b4bbc3" d="M42 122 68 85 97 82 108 47 138 40 155 55 153 87 170 107 155 125 139 146 69 149z"/><path fill="#dce0e2" d="m68 85 29-3 33 39-61 28-27-27z"/><path fill="#8a91a1" d="m97 82 33 39 25 4-16 21-70 3z"/><path fill="#a79ab6" d="m97 82 11-35 10 44 35-4-23 34z"/><path fill="#777e8b" d="m42 122-20 15 47 12z"/><path fill="#584b69" d="M135 56h8v8h-8z"/><path fill="#e1d2b5" d="m153 65 20 9-20 5z"/><path stroke="#777383" stroke-width="6" d="m94 148-2 20H78m42-22 2 22h14"/></svg></div>
       </section>
-
-      <section class="panel container reveal" id="community-impact">
-        <h2>Community Impact</h2>
-        <div class="grid three-col">
-          <article class="card">
-            <h3>Culture-First Popups</h3>
-            <p>
-              We host events in Austin that carry true NYC texture: local artists,
-              DJs, and makers centered before algorithms.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Creative Opportunity</h3>
-            <p>
-              Nightmarket ATX opens access for independent vendors and performers to grow
-              with community support, not trend-chasing.
-            </p>
-          </article>
-          <article class="card">
-            <h3>Safe, Electric Spaces</h3>
-            <p>
-              We design high-vibe nights where culture is lived, not staged—based in the
-              essence from soundcheck to sunrise.
-            </p>
-          </article>
+      <section class="nightmarket shell section" id="nightmarket">
+        <div class="section-heading">
+          <span class="label">02 / NIGHTMARKET ATX</span
+          ><span class="label">AUSTIN, TEXAS</span>
         </div>
-      </section>
+        <div class="market-grid">
+          <div class="game-case">
+            <div class="case-hinge" aria-hidden="true"></div>
+            <div class="game-spine">
+              <div class="ps-header">
+                <img
+                  class="ps-symbol"
+                  src="/assets/playstation-logo.svg"
+                  alt="PlayStation"
+                  width="200"
+                  height="155"
+                /><small>PlayStation</small
+                ><span class="case-region">NTSC U/C</span>
+              </div>
+              <span class="spine-name">PlayStation</span>
+              <div
+                class="case-rating"
+                aria-label="M for Mature, concept cover graphic"
+              >
+                <span>MATURE</span><strong>M</strong><small>17+</small>
+              </div>
+              <small class="spine-serial">7TAC—001</small>
+            </div>
+            <div class="game-cover">
+              <div class="market-poster">
+                <span class="label">7 TRAIN ART CO. PRESENTS</span>
+                <h2>NIGHT<br />MARKET<span>ATX</span></h2>
+                <div class="poster-orbit" aria-hidden="true">
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="poster-bottom label">
+                  INDEPENDENT MAKERS<br />UNDERGROUND SOUNDS<br />GOOD COMPANY
+                  <span>COME<br />AS YOU ARE. ↗</span>
+                </div>
+              </div>
 
-      <section class="panel container reveal" id="graffiti">
-        <h2>Graffiti the 7 Train</h2>
-        <p>Draw directly on the train side, then download your tagged creation with a 7tac watermark.</p>
-        <div class="graffiti-wrap">
-          <canvas id="graffiti-canvas" width="980" height="420" aria-label="Graffiti drawing canvas"></canvas>
-          <div class="tools">
-            <label>
-              Color
-              <input type="color" id="paint-color" value="#bb86fc" />
-            </label>
-            <label>
-              Brush
-              <input type="range" id="brush-size" min="2" max="20" value="6" />
-            </label>
-            <button id="clear-canvas" class="btn ghost" type="button">Clear</button>
-            <button id="download-canvas" class="btn" type="button">Download Artwork</button>
+              <span class="case-format label">7TAC / CONCEPT EDITION</span>
+            </div>
+          </div>
+          <div class="market-details">
+            <span class="label">THE GATHERING</span>
+            <h3>TAKE BACK<br />THE NIGHT.</h3>
+            <p>
+              Curated vendors. Sound, lighting, art & live shows.
+            </p>
+            <p class="market-explainer">An always-free gathering across Austin venues with good food, independent makers, and experiences you have to be there for. Evening until late.</p>
+            <a class="text-link" href="/nightmarket/"
+              >Enter Nightmarket ATX <span>↗</span></a
+            >
           </div>
         </div>
       </section>
-
-      <section class="panel container reveal" id="faq">
-        <h2>FAQ</h2>
-        <div class="faq-list">
+      <section class="shell section contact contact-strip" id="contact">
+        <div>
+          <span class="label">KEEP THE CONNECTION</span>
+          <h2>Connect with us.</h2>
+        </div>
+        <div>
+          <p>Have an idea? Bring it to the table.</p>
           <details>
-            <summary>What is 7tac?</summary>
+            <summary>Start a conversation <span>+</span></summary>
             <p>
-              7tac (7 train art co) is a NYC-born collective mixing house/techno music,
-              visual art, and community programming.
+              Contact submissions are opening soon. For Nightmarket
+              participation, visit the event page.
             </p>
-          </details>
-          <details>
-            <summary>What is Nightmarket ATX?</summary>
-            <p>
-              A nighttime market + culture event in Austin, Texas built to spotlight authentic
-              creatives and keep scenes rooted in real community.
-            </p>
-          </details>
-          <details>
-            <summary>How can I collaborate with 7tac?</summary>
-            <p>
-              Use the vendor application for market participation and the contact form for
-              partnerships, performances, and installations.
-            </p>
+            <a class="text-link" href="/nightmarket/#contact"
+              >Nightmarket inquiries ↗</a
+            >
           </details>
         </div>
       </section>
+      <section class="shell section merch-soon" id="shop">
+<div><span class="label">03 / MERCH</span><h2>Coming soon.</h2><p>Something from us. Something to keep.</p></div>
+<div class="merch-placeholder" aria-label="Merch collection coming soon"><span class="label">7TAC / IN DEVELOPMENT</span><strong>COMING<br />SOON</strong><span class="label">STAY CLOSE.</span></div>
+</section>
+      <section class="shell section journal" id="journal">
+        <div class="section-heading">
+          <span class="label">05 / JOURNAL</span
+          ><span class="label">FIELD NOTES & UNFINISHED THOUGHTS</span>
+        </div>
+        <div class="journal-heading">
+          <h2>Culture is<br />a conversation.</h2>
+        </div>
+        <div id="journal-list"></div>
+      </section>
+      <section class="shell section graffiti" id="graffiti">
+        <div class="section-heading">
+          <span class="label">06 / LEAVE YOUR MARK</span
+          ><span class="label">AN OPEN CANVAS</span>
+        </div>
+        <h2>The train is yours.</h2>
+        <p>
+          Spray the carriage. Hold for a little drip. Take your piece with you.
+        </p>
+        <canvas
+          id="graffiti-canvas"
+          width="980"
+          height="420"
+          aria-label="Spray-paint canvas. Paint only on the train body; hold to build pigment and drips. Download the unpainted train if using a keyboard."
+        ></canvas>
+        <div class="paint-tools">
+          <label
+            >Ink <input type="color" id="paint-color" value="#806491" /></label
+          ><label
+            >Spray size
+            <input
+              type="range"
+              id="brush-size"
+              min="2"
+              max="20"
+              value="6" /></label
+          ><button id="spray-sound" aria-pressed="false">
+            Mute spray sound</button
+          ><button id="clear-canvas">Clear canvas</button
+          ><button id="download-canvas">Download artwork ↗</button>
+        </div>
+      </section>
     </main>
-
-    <footer class="panel container reveal" id="contact">
-      <h2>Contact Us</h2>
-      <p>Let’s build together. 7tac is always based in the essence.</p>
-      <form id="contact-form" class="stack-form">
-        <label>
-          Name
-          <input type="text" name="name" required />
-        </label>
-        <label>
-          Email
-          <input type="email" name="email" required />
-        </label>
-        <label>
-          Message
-          <textarea name="message" rows="5" required></textarea>
-        </label>
-        <button class="btn" type="submit">Send Message</button>
-        <p class="form-status" id="contact-status" aria-live="polite"></p>
-      </form>
-      <p class="copyright">© 2026 7tac / 7 train art co — based in the essence.</p>
+    <footer class="shell">
+      <a href="#main" class="footer-brand">7TAC<span>7 TRAIN ART CO.</span></a
+      ><span class="label"
+        >QUEENS ROOTS. AUSTIN ENERGY.<br />© 2026 7 TRAIN ART CO.</span
+      ><button id="motion-toggle" aria-pressed="false">
+        Pause train motion
+      </button>
     </footer>
-
-    <script src="script.js"></script>
+    <dialog id="article-dialog" aria-labelledby="article-title">
+      <button id="article-close">Close article ×</button>
+      <div id="article-content"></div>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
