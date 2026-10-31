@@ -170,7 +170,7 @@ try {
   await page.locator("#nightmarket").scrollIntoViewIfNeeded();
   await shot("nightmarket");
   assert.ok(
-    await page.getByText("To be announced", { exact: true }).isVisible(),
+    await page.getByText("Late 2026 + 2027 · dates to be announced", { exact: true }).isVisible(),
   );
   await page.locator("#collectibles").scrollIntoViewIfNeeded();
 
@@ -211,7 +211,7 @@ try {
   ]) {
     await page.locator('[data-application="' + key + '"]').click();
     assert.equal(await page.locator("#application-title").textContent(), title);
-    assert.equal(await page.locator("#contact-form select").inputValue(), key);
+    assert.equal(await page.locator('#contact-form select[name="type"]').inputValue(), key);
     assert.equal(
       await page.locator("#application-preview").getAttribute("open"),
       "",
@@ -225,7 +225,7 @@ try {
   await shot("participation-mobile");
   await page.setViewportSize({ width: 1440, height: 900 });
 
-  assert.equal(await page.locator("#contact-form button").isDisabled(), true);
+  assert.equal(await page.locator("#contact-form button").isDisabled(), false);
   await page.goto(base);
   assert.equal(await page.locator("#nightmarket + #contact").count(), 1);
   await page.locator("#nightmarket").scrollIntoViewIfNeeded();
@@ -361,10 +361,10 @@ try {
           "train movement",
           "reduced motion",
           "three curated objects, forward and reverse wrap",
-          "six role-specific application previews",
+          "six role-specific application forms",
           "journal draft navigation",
           "spray density, slight drips, strict train mask, sound graph and mute, clear and download",
-          "disabled unconnected form",
+          "enabled application form with server submission",
           "all hash destinations",
           "no console errors",
         ],

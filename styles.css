@@ -972,6 +972,24 @@ textarea {
 fieldset:disabled {
   opacity: 0.6;
 }
+
+/* Native applications: conditional fields retain the site's restrained visual style. */
+#contact-form { margin-top: 24px; }
+.application-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 20px; margin-bottom: 24px; }
+.application-grid label, .application-field legend { font-size: 13px; line-height: 1.5; }
+.application-grid > label, .application-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.application-field:has(textarea), .application-field:has(input[type="checkbox"]) { grid-column: 1 / -1; }
+.application-field[hidden] { display: none; }
+#contact-form input:not([type="checkbox"]), #contact-form select, #contact-form textarea { width: 100%; min-height: 44px; border: 1px solid #777080; border-radius: 6px; background: #211d29; color: #f5f1f7; padding: 12px; font: inherit; font-size: 16px; }
+#contact-form textarea { resize: vertical; }
+#contact-form .application-check { display: flex; flex-direction: row; align-items: flex-start; gap: 12px; margin: 10px 0; min-height: 44px; font-size: 13px; line-height: 1.6; }
+#contact-form input[type="checkbox"] { width: 20px; height: 20px; flex: 0 0 20px; margin-top: 2px; accent-color: #b9a7d0; }
+#contact-form [aria-invalid="true"] { border-color: #ffc3ba; outline: 2px solid #ffc3ba; }
+.field-error { color: #ffc3ba; font-size: 12px; }
+#application-status { overflow-wrap: anywhere; line-height: 1.7; }
+#application-description { color: #cbbfd7; }
+.application-trap { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 600px) { .application-grid { grid-template-columns: minmax(0,1fr); } }
 button:disabled {
   cursor: not-allowed;
 }

@@ -138,7 +138,7 @@
             <dl>
               <div>
                 <dt>NEXT DATE</dt>
-                <dd>To be announced</dd>
+                <dd>Late 2026 + 2027 · dates to be announced</dd>
               </div>
               <div>
                 <dt>WHERE</dt>
@@ -154,7 +154,7 @@
               issued yet.
             </p>
             <a class="glass-cta" href="#contact"
-              ><span class="label">OPEN CALL / COMING SOON</span
+              ><span class="label">OPEN CALL / 2026–27</span
               ><strong
                 >Be part of Nightmarket
                 <span aria-hidden="true">↗</span></strong
@@ -236,49 +236,33 @@
           </button>
         </div>
         <p class="fine application-note">
-          Applications opening soon. Choose a path to preview what we’ll ask
-          for.
+          Apply for late 2026 or 2027. These are planning seasons; exact dates, venues, load-in times and vendor fees will be confirmed before you commit.
         </p>
         <details id="application-preview">
           <summary>
-            <span id="application-title">Application preview</span
+            <span id="application-title">Your application</span
             ><span>+</span>
           </summary>
           <p id="application-description">
             Choose how you’d like to take part.
           </p>
-          <p class="fine">
-            Preview only. Applications are not being collected yet.
-          </p>
           <form id="contact-form">
-            <fieldset disabled>
-              <label
-                >Applying as<select name="type">
-                  <option value="vendor">Vendors</option>
-                  <option value="artist">Artists</option>
-                  <option value="music">DJs / music</option>
-                  <option value="performance">Live performance</option>
-                  <option value="partner">Partners</option>
-                  <option value="idea">Bring an idea</option>
-                </select></label
-              >
-              <label
-                >Name / organization<input name="name" autocomplete="name"
-              /></label>
-              <label
-                >Email<input name="email" type="email" autocomplete="email"
-              /></label>
-              <label
-                ><span id="application-link-label">Website / social link</span
-                ><input name="link" type="url"
-              /></label>
-              <label
-                ><span id="application-message-label"
-                  >Tell us about your idea</span
-                ><textarea name="message" rows="3"></textarea>
-              </label>
-              <button type="submit">Applications opening soon</button>
-            </fieldset>
+            <div class="application-grid">
+              <label>Applying as *<select name="type" required>
+                <option value="vendor">Vendor</option><option value="artist">Artist</option>
+                <option value="music">DJ / music</option><option value="performance">Live performance</option>
+                <option value="partner">Partner</option><option value="idea">Bring an idea</option>
+              </select></label>
+              <label>Season of interest *<select name="season" required></select></label>
+            </div>
+            <div id="application-fields" class="application-grid"></div>
+            <div class="application-trap" aria-hidden="true"><label>Leave this empty<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+            <label class="application-check"><input type="checkbox" name="acknowledgment" required />I understand this is an application, not acceptance or a reserved space. Dates, logistics and any fees will be confirmed separately. *</label>
+            <label class="application-check"><input type="checkbox" name="updates" />Email me about future Nightmarket events (optional).</label>
+            <p class="fine">We use your answers to review your application and coordinate participation. Only the organizing team can access submissions. Application emails are separate from optional event updates. To request a correction or deletion, email <a href="mailto:seventrainartco@gmail.com">seventrainartco@gmail.com</a>.</p>
+            <button type="submit">Send application</button>
+            <p id="application-status" role="status" aria-live="polite" tabindex="-1"></p>
+            <noscript><p>Please enable JavaScript to fill out the application, or email seventrainartco@gmail.com.</p></noscript>
           </form>
         </details>
       </section>

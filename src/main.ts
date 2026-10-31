@@ -1,3 +1,4 @@
+import { initApplicationForm } from "./application-form";
 if (document.getElementById("graffiti-canvas")) void import("./graffiti");
 import { STARTER_ARCHETYPES } from "./companionCatalog";
 
@@ -139,83 +140,7 @@ window.setInterval(() => {
   quote.title = quoteSequence[quoteIndex].source;
 }, 1000);
 
-const applicationPaths: Record<
-  string,
-  { title: string; description: string; link: string; message: string }
-> = {
-  vendor: {
-    title: "Vendor application",
-    description: "Tell us what you make or serve and what your setup needs.",
-    link: "Shop / menu / social link",
-    message: "Products, space and setup needs",
-  },
-  artist: {
-    title: "Artist application",
-    description: "Share your practice and the work you’d like to bring.",
-    link: "Portfolio / social link",
-    message: "Medium, proposed work and installation needs",
-  },
-  music: {
-    title: "DJ / music application",
-    description: "Introduce your sound, from a DJ set to original live music.",
-    link: "Mix / music link",
-    message: "Genres, set format and equipment needs",
-  },
-  performance: {
-    title: "Live performance application",
-    description: "Bring movement, words or a performance of your own.",
-    link: "Performance reel / portfolio",
-    message: "Performance concept, duration and technical needs",
-  },
-  partner: {
-    title: "Partner inquiry",
-    description: "Explore a venue, brand or community collaboration.",
-    link: "Organization website",
-    message: "Proposed collaboration and what you can contribute",
-  },
-  idea: {
-    title: "Share an idea",
-    description:
-      "If it doesn’t fit a category, there’s still room for it here.",
-    link: "Reference / social link (optional)",
-    message: "Your idea and what would make it possible",
-  },
-};
-const applicationPreview = $<HTMLDetailsElement>("application-preview");
-document
-  .querySelectorAll<HTMLButtonElement>("[data-application]")
-  .forEach((button) => {
-    button.onclick = () => {
-      const key = button.dataset.application!;
-      const path = applicationPaths[key];
-      $("application-title").textContent = path.title;
-      $("application-description").textContent = path.description;
-      $("application-link-label").textContent = path.link;
-      $("application-message-label").textContent = path.message;
-      document.querySelector<HTMLSelectElement>("#contact-form select")!.value =
-        key;
-      document
-        .querySelectorAll("[data-application]")
-        .forEach((item) =>
-          item.setAttribute("aria-expanded", String(item === button)),
-        );
-      applicationPreview.open = true;
-      const summary = applicationPreview.querySelector("summary")!;
-      summary.focus({ preventScroll: true });
-      applicationPreview.scrollIntoView({
-        behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
-          ? "instant"
-          : "smooth",
-        block: "center",
-      });
-    };
-  });
-applicationPreview?.addEventListener("toggle", () => {
-  if (!applicationPreview.open)
-    document
-      .querySelectorAll("[data-application]")
-      .forEach((item) => item.setAttribute("aria-expanded", "false"));
-});
+initApplicationForm();
 
 // Build editorial previews from the existing source drafts, not invented publication records.
 const sources = import.meta.glob("../content/blog/*.md", {
@@ -286,7 +211,7 @@ article.addEventListener("close", () => {
 });
 window.addEventListener("hashchange", showArticle);
 showArticle();
-$("contact-form")?.addEventListener("submit", (e) => e.preventDefault());
+
 
 const caseToggle = document.getElementById("case-toggle");
 caseToggle?.addEventListener("click", () => {

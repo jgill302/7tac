@@ -4,5 +4,16 @@
   "installCommand": "npm ci",
   "buildCommand": "npm run typecheck && npm run build",
   "outputDirectory": "dist",
-  "trailingSlash": true
+  "trailingSlash": true,
+  "functions": {
+    "api/*.mjs": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/retry-emails/",
+      "schedule": "0 12 * * *"
+    }
+  ]
 }

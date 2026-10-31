@@ -1,6 +1,6 @@
 # 7 Train Art Co. — local redesign
 
-Working branch: `feature/7tac-v2-redesign`, based on `design/7tac-visual-direction` at `b5cf965`.
+Working branch: `feature/application-backend`, built on `feature/7tac-v2-redesign`.
 
 ## Run
 
@@ -37,20 +37,24 @@ Browser QA uses Playwright with locally installed Microsoft Edge. Install Edge i
 
 ## Production boundaries
 
-This is a local frontend redesign, not a deployed service. Event details are unannounced. No registration, ticket, email, payment, claim, attendance or application is recorded. Contact/application fields are disabled; there is no fake successful submission. Companion stages and passport stamps are explicitly ephemeral simulations; only three starter concept illustrations exist, with numbered placeholder studies for the other fourteen.
+The native Nightmarket application form and Vercel/Supabase/Resend backend are implemented locally. Late 2026 and 2027 are planning seasons with exact dates and venues unannounced. Live submissions require account setup, the SQL migration and server environment variables: see [Backend setup](docs/BACKEND_SETUP.md). Without configuration the API reports that applications are not open; it never claims to save an application.
 
-Supabase/Resend/commerce integration and owner administration require their own backend implementation phase. No admin endpoint or client-side privileged bypass is enabled. Birthday override exists only in the specification and must be server-authorized, MFA-protected and audited before use. Journal drafts use hash-based reading previews; published article routes, per-article social metadata and confirmed publication dates remain future work.
+Review applications in the private Supabase dashboard. Branded admin authentication, automated acceptance emails, RSVP/ticket issuance, payments and file uploads remain future work. Companion stages and passport stamps remain ephemeral simulations. Journal posts remain editorial previews.
 
 Fonts currently load Chakra Petch and Space Grotesk from Google Fonts with local fallbacks. Self-host licensed font files before production if eliminating third-party font requests is desired.
 
-No deployment configuration or live infrastructure was changed. No merge or push was performed.
+Vercel function and daily email retry configuration is included. No live infrastructure, deployment, merge or push was performed.
 
 ## Dedicated Nightmarket page
 
-`nightmarket/index.html` is a second Vite build entry, configured in `vite.config.ts`. Open `/nightmarket/` for event details, participation previews and companion/attendance simulations. The homepage keeps a brief Nightmarket invitation, followed immediately by general connection copy. Its archive is a visual selector without attendance controls. The shared runtime handles navigation between pages and loads the drawing module only when a canvas is present.
+`nightmarket/index.html` is a second Vite build entry, configured in `vite.config.ts`. Open `/nightmarket/` for event details, conditional participation forms and companion/attendance simulations. The homepage keeps a brief Nightmarket invitation, followed immediately by general connection copy. Its archive is a visual selector without attendance controls. The shared runtime handles navigation between pages and loads the drawing module only when a canvas is present.
 
 Latest behavior: the digital archive has been removed entirely from the homepage and appears only in Nightmarket. The drawing tool is a clipped, particle-based spray with subtle drips and optional locally synthesized spray audio. Downloaded PNGs use a small digital watermark. Asset provenance is in `docs/ASSET_SOURCES.md`.
 
 ## Vercel
 
-Deployment configuration is in `vercel.json`: Vite, Node 24.x, `npm ci`, typecheck + build, `dist`, and canonical trailing-slash page URLs. Import the **feature/7tac-v2-redesign** branch with **Root Directory `.`**. See `docs/VERCEL_DEPLOYMENT.md` for dashboard instructions and post-deployment checks. No frontend environment variables are needed.
+Deployment configuration is in `vercel.json`: Vite, Node 24.x, `npm ci`, typecheck + build, `dist`, and canonical trailing-slash page URLs. Import the **feature/application-backend** branch with **Root Directory `.`**. See `docs/VERCEL_DEPLOYMENT.md` for dashboard instructions and post-deployment checks. No frontend secrets are needed. Server-only environment variables are listed in `.env.example`.
+
+## Application tests
+
+`npm run test:backend` covers server validation, failures and the SQL migration against isolated PostgreSQL (PGlite). `npm run test:form` covers conditional fields, all six viewport widths and browser retry/success behavior against an unconfigured local preview. See `docs/BACKEND_SETUP.md` for the distinction between local tests and the live verification still required.
