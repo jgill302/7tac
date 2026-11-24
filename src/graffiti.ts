@@ -102,14 +102,22 @@ function drawTrainBase() {
 }
 function spray(p: Point, amount: number) {
   const radius = Number(brushInput.value) * 2 + 3;
+  // A firm pigment core gives a visible first pass; droplets keep the aerosol edge.
+  const pigment = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, radius);
+  pigment.addColorStop(0, colorInput.value);
+  pigment.addColorStop(0.68, colorInput.value);
+  pigment.addColorStop(1, colorInput.value + "00");
+  ctx.fillStyle = pigment;
+  ctx.globalAlpha = Math.min(0.65, (amount / 55) * 0.38);
+  ctx.fillRect(p.x - radius, p.y - radius, radius * 2, radius * 2);
   ctx.fillStyle = colorInput.value;
   for (let i = 0; i < amount; i++) {
     // More pigment at the center, irregular fine droplets at the feathered edge.
     const angle = Math.random() * Math.PI * 2;
     const distance = Math.pow(Math.random(), 0.75) * radius;
-    const size = 0.35 + Math.random() * 0.8;
+    const size = 0.45 + Math.random() * 1.0;
     ctx.globalAlpha =
-      (0.12 + Math.random() * 0.32) * (1 - (distance / radius) * 0.65);
+      (0.24 + Math.random() * 0.42) * (1 - (distance / radius) * 0.65);
     ctx.beginPath();
     ctx.arc(
       p.x + Math.cos(angle) * distance,
@@ -144,7 +152,7 @@ function tick(time: number) {
               y: lastPoint.y + (point.y - lastPoint.y) * t,
             }
           : point,
-        Math.max(10, Math.round((55 * dt) / 16 / steps)),
+        Math.max(10, Math.round((77 * dt) / 16 / steps)),
       );
     }
     dwell = distance < 5 ? dwell + dt : Math.max(0, dwell - dt * 2);

@@ -58,3 +58,5 @@ Deployment configuration is in `vercel.json`: Vite, Node 24.x, `npm ci`, typeche
 ## Application tests
 
 `npm run test:backend` covers server validation, failures and the SQL migration against isolated PostgreSQL (PGlite). `npm run test:form` covers conditional fields, all six viewport widths and browser retry/success behavior against an unconfigured local preview. See `docs/BACKEND_SETUP.md` for the distinction between local tests and the live verification still required.
+
+Merch now lives at /merch/, reached from the 7TAC directory. The homepage centers the collective and Nightmarket Transmission 02; no merch placeholder appears in its main content. Transmission 02 date and venue remain unannounced.

@@ -1,20 +1,19 @@
 ---
-title: "Where Did All the Third Spaces Go?"
+title: "A Neighborhood You Can Reach on Foot"
 slug: "where-did-third-spaces-go"
-excerpt: "A city needs places where you can show up without being expected to spend."
-category: "Nightmarket ATX"
+category: "City Life"
 status: "draft"
 ---
-# Where Did All the Third Spaces Go?
+# A Neighborhood You Can Reach on Foot
 
-Somewhere between work, home, and the endless feed, we lost places where people could simply exist together. Not every evening should require a reservation, a cover charge, or an expensive drink. A third space is somewhere you can turn up without needing to justify why you're there.
+Walkability is often described as a distance: how many minutes to the store, the train, the park. We’re interested in what can happen along that distance. Can you pause? Is there somewhere to sit? Can you cross the street without having to hurry through the conversation you just started?
 
-For a lot of us, the places that shaped our taste weren't polished. They were record shops where someone put you on to a new sound. Sidewalk conversations after a show. A room where artists, strangers, and friends found themselves in the same orbit.
+New York’s Open Streets program gives a concrete example. NYC DOT works with community partners to turn streets into spaces for walking, cycling, cultural programming, and neighborhood use. The program treats a street as something residents can help shape, with support for its day-to-day operation. [Explore NYC DOT’s Open Streets program](https://www.nyc.gov/html/dot/html/pedestrians/openstreets.shtml).
 
-Nightlife can be part of that story, but it doesn't have to be exclusive. Good music, food, and art should bring people closer together, not turn culture into another premium experience.
+That last part matters. A pleasant block needs people who maintain it, neighbors who can still reach their homes, and businesses that can take deliveries. A successful place is useful on an ordinary Tuesday, after the photograph has been taken.
 
-That's the idea behind 7 Train Art Co: make room for the unexpected, let people discover something, and protect the spaces where communities grow.
+For Austin, the question we want to ask is specific: what would make it easier to move between the places people already love? Shade along the route. A usable crossing. A bench that doesn’t require a purchase. A continuous accessible sidewalk, including for someone using a wheelchair. These are priorities we’d like to see, rather than a claim that one project can solve them all.
 
-We don't need every gathering to be an event of the season. Sometimes the most meaningful thing is having somewhere to go.
+A collection of excellent destinations can still leave everyone arriving separately and leaving separately. Put care into the space between them and a different kind of routine becomes possible: the familiar face at the corner, the shop you finally step into, the friend you walk home with.
 
-*Editorial draft for review before publication.*
+For us, a good neighborhood gives those ordinary encounters a chance to repeat.

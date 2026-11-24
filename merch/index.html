@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="7 Train Art Co. A Queens-rooted creative platform connecting sound, art, physical culture, and people. Based in the essence."
+    />
+    <meta name="theme-color" content="#FAF9F5" />
+    <title>Merch — 7 Train Art Co.</title>
+    <link rel="icon" href="/mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body data-page="merch">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="train-panorama" aria-hidden="true"></div>
+      <button
+        class="brand"
+        id="menu-toggle"
+        aria-label="Open 7TAC navigation"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M8 10h49v11L33 55H17l25-32H8z" />
+          <path d="M9 30h20l-7 9H9z" /></svg
+        ><span>MENU <span aria-hidden="true">+</span></span>
+      </button>
+      <a class="nightmarket-link" href="/nightmarket/"
+        >NIGHTMARKET.ATX <span aria-hidden="true">↗</span></a
+      >
+    </header>
+    <dialog id="navigation" aria-label="7TAC navigation">
+      <div class="menu-top">
+        <span class="label">7 TRAIN ART CO. / DIRECTORY</span
+        ><button id="menu-close" aria-label="Close navigation">CLOSE ×</button>
+      </div>
+      <div class="menu-layout">
+        <div class="menu-art">
+          <span class="label">QUEENS, NY ↔ AUSTIN, TX</span>
+          <div class="outline-seven" aria-hidden="true">7</div>
+          <p>Sound. Objects. People.<br />Everything is connected.</p>
+        </div>
+        <nav aria-label="Main navigation">
+          <a href="/#about"><small>01</small>About <span>↗</span></a
+          ><a href="/nightmarket/"
+            ><small>02</small>Nightmarket ATX <span>↗</span></a
+          ><a href="/merch/"><small>03</small>Merch · coming soon <span>↗</span></a
+          ><a href="/nightmarket/#collectibles"
+            ><small>04</small>The archive <span>↗</span></a
+          ><a href="/#journal"><small>05</small>Journal <span>↗</span></a
+          ><a href="/#graffiti"><small>06</small>After hours <span>↗</span></a
+          ><a href="/#contact"><small>07</small>Contact <span>↗</span></a>
+        </nav>
+      </div>
+      <div class="menu-bottom label">
+        <div class="quote-channel">
+          <span id="matrix-quote">Follow the white rabbit.</span
+          ><button
+            id="quote-toggle"
+            aria-label="Pause quote rotation"
+            aria-pressed="false"
+          >
+            Ⅱ
+          </button>
+        </div>
+        <a href="/nightmarket/">NIGHTMARKET.ATX ↗</a>
+      </div>
+    </dialog>
+    <main id="main">
+<div class="shell market-page-heading"><a class="text-link" href="/">← Back to 7 Train Art Co.</a></div>
+      <section class="shell section merch-soon" id="shop">
+<div><span class="label">03 / MERCH</span><h2>Coming soon.</h2><p>Something from us. Something to keep.</p></div>
+<div class="merch-placeholder" aria-label="Merch collection coming soon"><span class="label">7TAC / IN DEVELOPMENT</span><strong>COMING<br />SOON</strong><span class="label">STAY CLOSE.</span></div>
+</section>
+    </main>
+    <footer class="shell">
+      <a href="#main" class="footer-brand">7TAC<span>7 TRAIN ART CO.</span></a
+      ><span class="label"
+        >Queens since 93’<br />© 2026 7 TRAIN ART CO.</span
+      ><button id="motion-toggle" aria-pressed="false" aria-label="Pause animation"><span aria-hidden="true">Ⅱ</span></button>
+    </footer>
+    <dialog id="article-dialog" aria-labelledby="article-title">
+      <button id="article-close">Close article ×</button>
+      <div id="article-content"></div>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -14,7 +14,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      input: { home: "index.html", nightmarket: "nightmarket/index.html" },
+      input: { home: "index.html", nightmarket: "nightmarket/index.html", merch: "merch/index.html" },
     },
   },
 });

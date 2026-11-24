@@ -176,9 +176,9 @@ p + p {
   z-index: -1;
   inset: 0;
   opacity: 0.94;
-  background: url("/train.svg") repeat-x left center;
-  background-size: 1200px 100%;
-  animation: passing-train 3.2s linear infinite;
+  background: url("/train-strip.svg") repeat-x left center;
+  background-size: 2400px 100%;
+  animation: passing-train 6.4s linear infinite;
 }
 .site-header:after {
   content: "";
@@ -198,7 +198,7 @@ p + p {
     background-position-x: 0;
   }
   to {
-    background-position-x: 1200px;
+    background-position-x: 2400px;
   }
 }
 .motion-paused .train-panorama {
@@ -2046,7 +2046,16 @@ body:not([data-page]) .market-details > p { font-size:clamp(21px,2.1vw,30px); li
 body:not([data-page]) .market-details > .market-explainer { font-size:17px; line-height:1.65; max-width:48ch; }
 .merch-soon { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; }
 .merch-soon h2 { margin:16px 0; }
-.merch-placeholder { min-height:240px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; border:1px solid #c2bfca; border-radius:6px; background:linear-gradient(130deg,#f7f6f8,#dcd9e1 50%,#f0eef4); box-shadow:inset 0 0 0 5px #ffffff70; }
+.merch-placeholder { position:relative; overflow:hidden; min-height:240px; padding:28px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; border:1px solid #787480; border-radius:0; background:linear-gradient(130deg,#f7f6f8,#dcd9e1 50%,#f0eef4); box-shadow:inset 0 0 0 5px #ffffff70; }
+.merch-placeholder::after { content:""; position:absolute; inset:10px; pointer-events:none; border:1px solid #62596b; background:linear-gradient(115deg,transparent 45%,#ffffff90 49%,transparent 53%); background-size:300% 100%; animation:merch-card-flicker 7s steps(1,end) infinite; }
+@keyframes merch-card-flicker { 0%,82%,100% { opacity:.25; background-position:100% 0; } 84%,90% { opacity:.65; background-position:50% 0; } 87%,94% { opacity:.35; background-position:0 0; } }
+body.motion-paused .merch-placeholder::after { animation-play-state:paused; }
+.night-neon { color:#71318b; text-shadow:0 0 3px #d99af4,0 0 10px #bc6cdd90,0 0 22px #ba6cda60; }
+.collective-projects { margin:24px 0; border-top:1px solid #85818d; }
+.collective-projects p { margin:16px 0; }
+.collective-projects a,.collective-projects strong { color:#f2f0e9; font-weight:600; }
+.collective-links { display:flex; flex-wrap:wrap; gap:8px 24px; }
+body:not([data-page]) .case-rating > span { font-size:1.05cqw; letter-spacing:0; }
 .merch-placeholder strong { font:500 clamp(32px,4vw,58px)/1 var(--display); letter-spacing:.05em; color:#62596b; }
 .nightmarket-link { animation:night-neon 4s ease-in-out infinite alternate; }
 @keyframes night-neon { from { text-shadow:0 0 3px #b165cc55; } to { text-shadow:0 0 4px #bc6cdd,0 0 10px #ba6cda99,0 0 20px #b56cd15e; } }
@@ -2058,3 +2067,15 @@ body.motion-paused .collective-character svg,body.motion-paused .nightmarket-lin
  .collective-character svg { width:160px; }
 }
 @media(prefers-reduced-motion:reduce) { .collective-character svg,.nightmarket-link { animation:none; } }
+
+/* Match the navigation neon on the homepage event invitation. */
+.nightmarket-cta { color:#694578; text-shadow:0 0 4px #bc6cdd,0 0 10px #ba6cda99,0 0 20px #b56cd15e; animation:night-neon 4s ease-in-out infinite alternate; }
+body.motion-paused .nightmarket-cta { animation-play-state:paused; }
+@media(prefers-reduced-motion:reduce) { .nightmarket-cta { animation:none; } }
+
+/* Compact transport control, shared across destinations. */
+#motion-toggle { display:inline-grid; place-items:center; width:44px; height:44px; min-width:44px; padding:0; border:1px solid #694578; border-radius:4px; background:#694578; color:#faf9f5; font:600 20px/1 var(--display); cursor:pointer; }
+#motion-toggle:hover { background:#823db4; box-shadow:0 0 12px #823db440; }
+#motion-toggle:focus-visible { outline:2px solid #823db4; outline-offset:4px; }
+
+#article-content a { text-decoration:underline; text-underline-offset:.2em; }

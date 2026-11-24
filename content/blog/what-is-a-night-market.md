@@ -1,18 +1,19 @@
 ---
-title: "After Dark: The Night Market as a Meeting Place"
+title: "How to Spend an Evening Without a Checklist"
 slug: "after-dark-night-market"
-excerpt: "Night markets have long brought food, commerce, and community into the same evening."
 category: "Nightmarket ATX"
 status: "draft"
 ---
-# After Dark: The Night Market as a Meeting Place
+# How to Spend an Evening Without a Checklist
 
-Night markets aren't a new invention or a single culture's idea. Across different places and traditions, evening markets have brought together food sellers, makers, neighbors, and people looking for somewhere to spend time after dark. Their histories differ by city and region; what connects them is the street-level energy of discovery.
+Arrive without a list of things you have to accomplish. You don’t need to meet a quota of people or come home carrying something to have spent an evening well.
 
-You come for a snack and stay because you hear music around the corner. You meet someone making something by hand. You run into a friend you didn't plan to see. The market becomes more than a transaction.
+Take a first lap. Notice where the sound changes and which tables you want to return to. If a vendor is already talking with someone, give them a moment. If you’re meeting friends, choose an obvious place to find each other so nobody spends the whole night looking at their phone.
 
-That spirit is what interests us at 7 Train Art Co. We're not trying to recreate another city's market as a theme. We're asking what a night market can mean in Austin: a place where local makers, independent artists, music, and food intersect naturally.
+Coming alone can give the evening its own pace. You can listen to a set longer than you expected, ask about a piece that caught your eye, or leave when you’ve had enough. Bringing someone new can be just as good: introduce them to a person rather than handing them a room full of strangers to figure out.
 
-The best nights leave room for people to wander. They aren't engineered around a VIP section. They're built around the possibility of finding something you didn't know you were looking for.
+We want Nightmarket to allow those different ways of being there. Entry is intended to stay free. Purchases are welcome support for participating makers, rather than a measure of whether a visitor belongs. Specific access information and event arrangements should be checked on the event page when announced.
 
-*Editorial draft for review before publication.*
+Before you leave, follow the artist whose work stayed with you. Thank someone who helped. Make sure your friend has a way home. An evening can be unplanned and still be considerate.
+
+This is our invitation to move through Nightmarket at your own pace. There is no prize for seeing every table.

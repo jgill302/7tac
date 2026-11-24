@@ -1,20 +1,17 @@
 ---
-title: "A Market With a Point of View"
+title: "What a Good Vendor Table Makes Possible"
 slug: "market-with-a-point-of-view"
-excerpt: "Why Nightmarket ATX puts independent makers and creative fit first."
 category: "Nightmarket ATX"
 status: "draft"
 ---
-# A Market With a Point of View
+# What a Good Vendor Table Makes Possible
 
-A good night market isn't a row of interchangeable booths. Every artist, maker, and food concept changes the atmosphere. That's why Nightmarket ATX approaches participation as curation, not simply filling spaces.
+A one-of-one piece asks you to slow down. Turn it over. Notice the repair, the print registration, the choice of fabric. At a market table, the person who made those decisions can explain them.
 
-We look for people who make something with intention: a fresh perspective, a strong visual identity, a sound worth hearing, or a food concept with a story behind it. Our aim is to create meaningful opportunities for independent creatives while keeping the experience welcoming to visitors.
+That exchange is what we want to protect when we curate Nightmarket. We’re looking at the work, how it is presented, and what each participant adds to the room. A small edition of prints, a clothing project, and a food stall need different kinds of space. Filling every gap on a floor plan can leave none of them enough room to be understood.
 
-For selected independent vendors, our standard community-market participation model does not require a booth fee. Spaces are limited, and an application isn't a guarantee of acceptance. We consider the balance of categories, originality, presentation, and fit with each event.
+Our editorial point of view is practical: a visitor should be able to see what is available, ask a question without blocking a walkway, and understand what they’re buying. Makers should have clear information about the space and the event before deciding to participate. Participation details belong in the current event information, where they can be confirmed.
 
-We also welcome organizations interested in supporting the work. Brand activations, commercial partnerships, and larger-scale collaborations follow a separate conversation, with scope and terms determined by the opportunity. That helps protect the character of the market while giving supporters a constructive way to participate.
+Visitors have a role too. Ask before photographing someone’s work closely. Give credit when you share it. If a piece is beyond your budget, take the artist’s details and follow their next release. Buying directly, when you can, supports the time and judgment behind the object.
 
-The point is not exclusivity for its own sake. It's making sure the space feels like something worth caring about.
-
-*Editorial draft for review before publication.*
+Curation should make room for that attention. The test for us is whether a maker can leave having been properly seen—and whether a visitor remembers whose work they held.

@@ -36,6 +36,13 @@ const shot = (name) =>
   });
 try {
   await page.goto(base);
+  assert.equal(await page.locator('main #shop, main .merch-soon').count(), 0);
+  assert.equal(await page.getByText('7TAC Frequencies', {exact:true}).count(), 0);
+  assert.equal(await page.getByRole('link', {name:'Partner with us'}).getAttribute('href'), '#contact');
+  assert.equal(await page.locator('.nightmarket-cta').evaluate(el => getComputedStyle(el).animationName), 'night-neon');
+  await page.goto(base + '/merch/');
+  assert.equal(await page.locator('.merch-soon').count(), 1);
+  await page.goto(base);
   await page.evaluate(() => document.fonts.ready);
   assert.equal(
     await page.locator(".site-header a, .site-header button").count(),
@@ -170,7 +177,7 @@ try {
   await page.locator("#nightmarket").scrollIntoViewIfNeeded();
   await shot("nightmarket");
   assert.ok(
-    await page.getByText("Late 2026 + 2027 · dates to be announced", { exact: true }).isVisible(),
+    await page.getByText("Next gathering · date to be announced", { exact: true }).isVisible(),
   );
   await page.locator("#collectibles").scrollIntoViewIfNeeded();
 

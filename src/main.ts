@@ -57,7 +57,8 @@ const motion = $<HTMLButtonElement>("motion-toggle");
 motion.addEventListener("click", () => {
   const paused = document.body.classList.toggle("motion-paused");
   motion.setAttribute("aria-pressed", String(paused));
-  motion.textContent = paused ? "Resume train motion" : "Pause train motion";
+  motion.innerHTML = `<span aria-hidden="true">${paused ? "▶" : "Ⅱ"}</span>`;
+  motion.setAttribute("aria-label", paused ? "Resume animation" : "Pause animation");
 });
 
 // Curated preview only; no account or progression state.
@@ -171,7 +172,19 @@ const visibleDrafts = drafts.filter((post) =>
     ? post.category === "Nightmarket ATX"
     : post.category !== "Nightmarket ATX",
 );
-$("journal-list").innerHTML = visibleDrafts
+// Only HTTPS references are linked; all article text remains escaped.
+const renderArticleText = (text: string) => {
+  const links = /\[([^\]\n]+)\]\((https:\/\/[^\s)]+)\)/g;
+  let html = "";
+  let cursor = 0;
+  for (const match of text.matchAll(links)) {
+    html += escapeHtml(text.slice(cursor, match.index));
+    html += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${escapeHtml(match[1])}</a>`;
+    cursor = match.index! + match[0].length;
+  }
+  return html + escapeHtml(text.slice(cursor));
+};
+if ($("journal-list")) $("journal-list").innerHTML = visibleDrafts
   .map(
     (post, i) =>
       `<a class="journal-row" href="#journal/${post.slug}"><span class="label">NOTE 00${i + 1}<br>${escapeHtml(post.category)}</span><h3>${escapeHtml(post.title)}</h3><span class="label">EDITORIAL DRAFT</span><span class="arrow" aria-hidden="true">↗</span></a>`,
@@ -189,7 +202,7 @@ function showArticle() {
     post.body
       .split(/\r?\n\r?\n/)
       .filter((p) => !p.startsWith("# "))
-      .map((p) => `<p>${escapeHtml(p.replace(/^\*|\*$/g, ""))}</p>`)
+      .map((p) => `<p>${renderArticleText(p.replace(/^\*|\*$/g, ""))}</p>`)
       .join("");
   if (!article.open) article.showModal();
   document.body.classList.add("modal-open");

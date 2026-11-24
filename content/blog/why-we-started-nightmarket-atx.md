@@ -1,20 +1,17 @@
 ---
-title: "Why We Started Nightmarket ATX"
+title: "After the First Night, Keep Building"
 slug: "why-we-started-nightmarket-atx"
-excerpt: "An invitation to build the kind of night we wanted to find."
 category: "Nightmarket ATX"
 status: "draft"
 ---
-# Why We Started Nightmarket ATX
+# After the First Night, Keep Building
 
-Nightmarket ATX began with a simple question: what if a night out could be about more than buying a ticket and standing in line?
+Our first Nightmarket has happened. The work now is to decide what deserves to carry forward and what we should do better the next time.
 
-We wanted a gathering where music, independent art, food, and people could meet on equal footing. Something with the energy of nightlife but the openness of a neighborhood hangout. A place you could visit without having to spend money just to belong.
+7 Train Art Co. is the collective behind the gathering. Nightmarket gives part of that work a place and a time: independent vendors, sound, design, food, and people sharing a room. We want the next edition to have its own character while remaining recognizable to someone who came to the first.
 
-7 Train Art Co carries a little of Queens in its name. That means a lot to us: overlapping communities, different sounds, and unexpected connections. Nightmarket ATX is one way we bring that sensibility into Austin while making room for the people already creating here.
+That means paying attention between events. Which information did a participant have to ask for? Where did people naturally stop? What would make it easier for an unfamiliar face to arrive? Those are the questions we want to keep asking, without pretending one night has answered them.
 
-Our goal is to keep entry accessible, invite distinctive independent vendors, and give emerging artists a platform. We favor thoughtful curation over filling every available table. The point isn't to make everything feel the same. It's to create a night where different ideas still feel like they belong together.
+Our Queens roots influence how we notice the overlap between creative scenes. Building in Austin means listening to people already doing the work here, supporting their places, and learning the local history. We have something to contribute and plenty to learn.
 
-We're building this with the people who show up, contribute, and make it their own.
-
-*Editorial draft. Confirm any specific historical claims and event details before publishing.*
+For the next gathering, the invitation remains open to distinctive makers and thoughtful collaborators. Dates, venue details, and participation arrangements will be shared when confirmed. Until then, there is work to do: conversations to continue, ideas to test, and relationships to look after after the lights come down.
